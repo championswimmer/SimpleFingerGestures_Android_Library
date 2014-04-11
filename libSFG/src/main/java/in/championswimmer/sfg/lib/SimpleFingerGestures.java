@@ -19,6 +19,9 @@ public class SimpleFingerGestures implements View.OnTouchListener {
 
     public interface On1FingerGestureListener {
         public boolean onSwipeUp();
+        public boolean onSwipeDown();
+        public boolean onSwipeLeft();
+        public boolean onSwipeRight();
 
     }
 
@@ -79,6 +82,15 @@ public class SimpleFingerGestures implements View.OnTouchListener {
         switch (gestureFlag) {
             case GestureAnalyser.SWIPE_1_UP:
                 on1FingerGestureListener.onSwipeUp();
+                break;
+            case GestureAnalyser.SWIPE_1_DOWN:
+                on1FingerGestureListener.onSwipeDown();
+                break;
+            case GestureAnalyser.SWIPE_1_LEFT:
+                on1FingerGestureListener.onSwipeLeft();
+                break;
+            case GestureAnalyser.SWIPE_1_RIGHT:
+                on1FingerGestureListener.onSwipeRight();
                 break;
         }
     }

@@ -29,6 +29,24 @@ public class MainActivity extends Activity {
                 Toast.makeText(getBaseContext(), "swiped up", Toast.LENGTH_SHORT).show();
                 return false;
             }
+
+            @Override
+            public boolean onSwipeDown() {
+                Toast.makeText(getBaseContext(), "swiped down", Toast.LENGTH_SHORT).show();
+                return false;
+            }
+
+            @Override
+            public boolean onSwipeLeft() {
+                Toast.makeText(getBaseContext(), "swiped left", Toast.LENGTH_SHORT).show();
+                return false;
+            }
+
+            @Override
+            public boolean onSwipeRight() {
+                Toast.makeText(getBaseContext(), "swiped right", Toast.LENGTH_SHORT).show();
+                return false;
+            }
         });
 
         mv.setOnTouchListener(sfg);

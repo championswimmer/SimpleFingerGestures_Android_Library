@@ -52,6 +52,18 @@ public class GestureAnalyser {
             if ( ( -(delY[0]) ) > ( 2 * (Math.abs(delX[0]) ) ) ) {
                 return SWIPE_1_UP;
             }
+
+            if ( ( (delY[0]) ) > ( 2 * (Math.abs(delX[0]) ) ) ) {
+                return SWIPE_1_DOWN;
+            }
+
+            if ( ( -(delX[0]) ) > ( 2 * (Math.abs(delY[0]) ) ) ) {
+                return SWIPE_1_LEFT;
+            }
+
+            if ( ( (delX[0]) ) > ( 2 * (Math.abs(delY[0]) ) ) ) {
+                return SWIPE_1_RIGHT;
+            }
         }
         return 0;
     }
