@@ -25,7 +25,7 @@ public class GestureAnalyser {
 
     private int numFingers = 0;
 
-    public GestureAnalyser () {
+    public GestureAnalyser() {
     }
 
     public void trackGesture(MotionEvent ev, int n) {
@@ -36,7 +36,7 @@ public class GestureAnalyser {
         numFingers = n;
     }
 
-    public int getGesture (MotionEvent ev, int n) {
+    public int getGesture(MotionEvent ev, int n) {
         for (int i = 0; i < n; i++) {
             finalX[i] = ev.getX(i);
             finalY[i] = ev.getY(i);
@@ -47,28 +47,26 @@ public class GestureAnalyser {
         return calcGesture();
     }
 
-    private int calcGesture () {
+    private int calcGesture() {
         if (numFingers < 2) {
-            if ( ( -(delY[0]) ) > ( 2 * (Math.abs(delX[0]) ) ) ) {
+            if ((-(delY[0])) > (2 * (Math.abs(delX[0])))) {
                 return SWIPE_1_UP;
             }
 
-            if ( ( (delY[0]) ) > ( 2 * (Math.abs(delX[0]) ) ) ) {
+            if (((delY[0])) > (2 * (Math.abs(delX[0])))) {
                 return SWIPE_1_DOWN;
             }
 
-            if ( ( -(delX[0]) ) > ( 2 * (Math.abs(delY[0]) ) ) ) {
+            if ((-(delX[0])) > (2 * (Math.abs(delY[0])))) {
                 return SWIPE_1_LEFT;
             }
 
-            if ( ( (delX[0]) ) > ( 2 * (Math.abs(delY[0]) ) ) ) {
+            if (((delX[0])) > (2 * (Math.abs(delY[0])))) {
                 return SWIPE_1_RIGHT;
             }
         }
         return 0;
     }
-
-
 
 
 }
