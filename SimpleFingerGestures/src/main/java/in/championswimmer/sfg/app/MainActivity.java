@@ -2,12 +2,19 @@ package in.championswimmer.sfg.app;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.MotionEvent;
 import android.widget.ImageView;
+import android.widget.Toast;
+import in.championswimmer.sfg.lib.SimpleFingerGestures;
 
 
 public class MainActivity extends Activity {
+
+    public static final String TAG = "MainActivity";
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -15,10 +22,19 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
         ImageView mv = (ImageView) findViewById(R.id.myview);
 
+        SimpleFingerGestures sfg = new SimpleFingerGestures();
+        sfg.setOn1FingerGestureListener(new SimpleFingerGestures.On1FingerGestureListener() {
+            @Override
+            public boolean onSwipeUp() {
+                Toast.makeText(getBaseContext(), "swiped up", Toast.LENGTH_SHORT).show();
+                return false;
+            }
+        });
 
-
+        mv.setOnTouchListener(sfg);
 
     }
+
 
 
     @Override
