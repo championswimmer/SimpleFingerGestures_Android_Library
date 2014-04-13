@@ -11,7 +11,7 @@ public class SimpleFingerGestures implements View.OnTouchListener {
 
     public static final String TAG = "SimpleFingerGestures";
     public static final boolean DEBUG = true;
-    
+
     protected boolean tracking[] = {false, false};
 
 
@@ -45,7 +45,8 @@ public class SimpleFingerGestures implements View.OnTouchListener {
                 if (tracking[0]) {
                     doCallBack(ga.getGesture(ev));
                 }
-                stopTracking(0); ga.untrackGesture();
+                stopTracking(0);
+                ga.untrackGesture();
                 return true;
             case MotionEvent.ACTION_POINTER_DOWN:
                 if (DEBUG) Log.d(TAG, "ACTION_POINTER_DOWN");
@@ -57,7 +58,8 @@ public class SimpleFingerGestures implements View.OnTouchListener {
                 if (tracking[1]) {
                     doCallBack(ga.getGesture(ev));
                 }
-                stopTracking(1); ga.untrackGesture();
+                stopTracking(1);
+                ga.untrackGesture();
                 return true;
             case MotionEvent.ACTION_CANCEL:
                 if (DEBUG) Log.d(TAG, "ACTION_CANCEL");
@@ -96,14 +98,14 @@ public class SimpleFingerGestures implements View.OnTouchListener {
         }
     }
 
-    private void startTracking (int nthPointer) {
-        for ( int i = 0; i <= nthPointer; i++) {
+    private void startTracking(int nthPointer) {
+        for (int i = 0; i <= nthPointer; i++) {
             tracking[i] = true;
         }
     }
-    
-    private void stopTracking (int nthPointer) {
-        for ( int i = nthPointer; i < tracking.length; i++) {
+
+    private void stopTracking(int nthPointer) {
+        for (int i = nthPointer; i < tracking.length; i++) {
             tracking[i] = false;
         }
     }

@@ -40,7 +40,7 @@ public class GestureAnalyser {
         numFingers = n;
     }
 
-    public void untrackGesture () {
+    public void untrackGesture() {
         numFingers = 0;
     }
 
