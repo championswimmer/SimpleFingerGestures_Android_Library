@@ -47,6 +47,32 @@ public class MainActivity extends Activity {
             }
         });
 
+        sfg.setOn2FingerGestureListener(new SimpleFingerGestures.On2FingerGestureListener() {
+            @Override
+            public boolean onSwipeUp() {
+                Toast.makeText(getBaseContext(), "swiped 2 up", Toast.LENGTH_SHORT).show();
+                return false;
+            }
+
+            @Override
+            public boolean onSwipeDown() {
+                Toast.makeText(getBaseContext(), "swiped 2 down", Toast.LENGTH_SHORT).show();
+                return false;
+            }
+
+            @Override
+            public boolean onSwipeLeft() {
+                Toast.makeText(getBaseContext(), "swiped 2 left", Toast.LENGTH_SHORT).show();
+                return false;
+            }
+
+            @Override
+            public boolean onSwipeRight() {
+                Toast.makeText(getBaseContext(), "swiped 2 right", Toast.LENGTH_SHORT).show();
+                return false;
+            }
+        });
+
         mv.setOnTouchListener(sfg);
 
     }
