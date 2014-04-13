@@ -3,11 +3,16 @@ package in.championswimmer.sfg.lib;
 import android.view.MotionEvent;
 
 /**
- * Created by championswimmer on 12/4/14.
+ * Internal API class to analyse the recorded gestures.
+ *
+ * @author championswimmer
+ * @since 0.1 12/04/14
+ * @version 0.2
+ *
  */
 public class GestureAnalyser {
 
-    public static final String TAG = "GestureAnalyser";
+    private static final String TAG = "GestureAnalyser";
     public static final boolean DEBUG = true;
 
     public static final int SWIPE_1_UP = 11;

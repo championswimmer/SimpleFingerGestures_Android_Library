@@ -5,11 +5,14 @@ import android.view.MotionEvent;
 import android.view.View;
 
 /**
- * Created by championswimmer on 12/4/14.
+ * @author championswimmer
+ * @since 0.1 12/04/14
+ * @version 0.2
+ *
  */
 public class SimpleFingerGestures implements View.OnTouchListener {
 
-    public static final String TAG = "SimpleFingerGestures";
+    private static final String TAG = "SimpleFingerGestures";
     public static final boolean DEBUG = true;
 
     protected boolean tracking[] = {false, false};
@@ -19,14 +22,25 @@ public class SimpleFingerGestures implements View.OnTouchListener {
     private On1FingerGestureListener on1FingerGestureListener;
     private On2FingerGestureListener on2FingerGestureListener;
 
+    /**
+     * Constructor that creates an internal {@link in.championswimmer.sfg.lib.GestureAnalyser } object as well
+     */
     public SimpleFingerGestures() {
         ga = new GestureAnalyser();
     }
 
+    /**
+     * Register a callback to be invoked when 1-finger gestures take place
+     * @param o1fgl The callback that will run
+     */
     public void setOn1FingerGestureListener(On1FingerGestureListener o1fgl) {
         on1FingerGestureListener = o1fgl;
     }
 
+    /**
+     * Register a callback to be invoked when 2-finger gestures take place
+     * @param o2fgl The callback that will run
+     */
     public void setOn2FingerGestureListener(On2FingerGestureListener o2fgl) {
         on2FingerGestureListener = o2fgl;
     }
@@ -111,25 +125,63 @@ public class SimpleFingerGestures implements View.OnTouchListener {
     }
 
 
+    /**
+     * Interface definition for the callback to be invoked when 1-finger gestures are performed
+     */
     public interface On1FingerGestureListener {
+        /**
+         * Called when user swipes <b>up</b> with one finger
+         * @return
+         */
         public boolean onSwipeUp();
 
+        /**
+         * Called when user swipes <b>down</b> with one finger
+         * @return
+         */
         public boolean onSwipeDown();
 
+        /**
+         * Called when user swipes <b>left</b> with one finger
+         * @return
+         */
         public boolean onSwipeLeft();
 
+        /**
+         * Called when user swipes <b>right</b> with one finger
+         * @return
+         */
         public boolean onSwipeRight();
 
     }
 
+    /**
+     * Interface definition for the callback to be invoked when 2-finger gestures are performed
+     */
     public interface On2FingerGestureListener {
 
+        /**
+         * Called when user swipes <b>up</b> with two fingers
+         * @return
+         */
         public boolean onSwipeUp();
 
+        /**
+         * Called when user swipes <b>down</b> with two fingers
+         * @return
+         */
         public boolean onSwipeDown();
 
+        /**
+         * Called when user swipes <b>left</b> with two fingers
+         * @return
+         */
         public boolean onSwipeLeft();
 
+        /**
+         * Called when user swipes <b>right</b> with two fingers
+         * @return
+         */
         public boolean onSwipeRight();
 
     }
