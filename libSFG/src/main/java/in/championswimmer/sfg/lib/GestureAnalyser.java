@@ -7,6 +7,9 @@ import android.view.MotionEvent;
  */
 public class GestureAnalyser {
 
+    public static final String TAG = "GestureAnalyser";
+    public static final boolean DEBUG = true;
+
     public static final int SWIPE_1_UP = 11;
     public static final int SWIPE_1_DOWN = 12;
     public static final int SWIPE_1_LEFT = 13;
@@ -28,7 +31,8 @@ public class GestureAnalyser {
     public GestureAnalyser() {
     }
 
-    public void trackGesture(MotionEvent ev, int n) {
+    public void trackGesture(MotionEvent ev) {
+        int n = ev.getPointerCount();
         for (int i = 0; i < n; i++) {
             initialX[i] = ev.getX(i);
             initialY[i] = ev.getY(i);
@@ -36,19 +40,22 @@ public class GestureAnalyser {
         numFingers = n;
     }
 
-    public int getGesture(MotionEvent ev, int n) {
-        for (int i = 0; i < n; i++) {
+    public void untrackGesture () {
+        numFingers = 0;
+    }
+
+    public int getGesture(MotionEvent ev) {
+        for (int i = 0; i < numFingers; i++) {
             finalX[i] = ev.getX(i);
             finalY[i] = ev.getY(i);
             delX[i] = finalX[i] - initialX[i];
             delY[i] = finalY[i] - initialY[i];
         }
-        numFingers = n;
         return calcGesture();
     }
 
     private int calcGesture() {
-        if (numFingers < 2) {
+        if (numFingers == 1) {
             if ((-(delY[0])) > (2 * (Math.abs(delX[0])))) {
                 return SWIPE_1_UP;
             }
@@ -63,6 +70,20 @@ public class GestureAnalyser {
 
             if (((delX[0])) > (2 * (Math.abs(delY[0])))) {
                 return SWIPE_1_RIGHT;
+            }
+        }
+        if (numFingers == 2) {
+            if (((-delY[0]) > (2 * Math.abs(delX[0]))) && ((-delY[1]) > (2 * Math.abs(delX[1])))) {
+                return SWIPE_2_UP;
+            }
+            if (((delY[0]) > (2 * Math.abs(delX[0]))) && ((delY[1]) > (2 * Math.abs(delX[1])))) {
+                return SWIPE_2_DOWN;
+            }
+            if (((-delX[0]) > (2 * Math.abs(delY[0]))) && ((-delX[1]) > (2 * Math.abs(delY[1])))) {
+                return SWIPE_2_LEFT;
+            }
+            if (((delX[0]) > (2 * Math.abs(delY[0]))) && ((delX[1]) > (2 * Math.abs(delY[1])))) {
+                return SWIPE_2_RIGHT;
             }
         }
         return 0;

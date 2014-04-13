@@ -1,5 +1,8 @@
 <manifest
-    package="in.championswimmer.sfg.lib">
+    package="in.championswimmer.sfg.lib"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <uses-sdk android:minSdkVersion="14"/>
 
 
 </manifest>

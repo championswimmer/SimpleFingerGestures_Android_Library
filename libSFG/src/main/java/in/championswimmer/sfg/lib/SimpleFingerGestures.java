@@ -10,9 +10,10 @@ import android.view.View;
 public class SimpleFingerGestures implements View.OnTouchListener {
 
     public static final String TAG = "SimpleFingerGestures";
+    public static final boolean DEBUG = true;
+    
+    protected boolean tracking[] = {false, false};
 
-    protected boolean trackingPrimaryTouch = false;
-    protected boolean trackingSecondaryTouch = false;
 
     private GestureAnalyser ga;
     private On1FingerGestureListener on1FingerGestureListener;
@@ -32,30 +33,34 @@ public class SimpleFingerGestures implements View.OnTouchListener {
 
     @Override
     public boolean onTouch(View view, MotionEvent ev) {
-        Log.d(TAG, "onTouch");
+        if (DEBUG) Log.d(TAG, "onTouch");
         switch (ev.getAction() & MotionEvent.ACTION_MASK) {
             case MotionEvent.ACTION_DOWN:
-                Log.d(TAG, "ACTION_DOWN");
-                trackingPrimaryTouch = true;
-                ga.trackGesture(ev, 1);
+                if (DEBUG) Log.d(TAG, "ACTION_DOWN");
+                startTracking(0);
+                ga.trackGesture(ev);
                 return true;
             case MotionEvent.ACTION_UP:
-                Log.d(TAG, "ACTION_UP");
-                if (trackingPrimaryTouch) {
-                    doCallBack(ga.getGesture(ev, 1));
+                if (DEBUG) Log.d(TAG, "ACTION_UP");
+                if (tracking[0]) {
+                    doCallBack(ga.getGesture(ev));
                 }
-                trackingPrimaryTouch = false;
+                stopTracking(0); ga.untrackGesture();
                 return true;
             case MotionEvent.ACTION_POINTER_DOWN:
-                Log.d(TAG, "ACTION_POINTER_DOWN");
-                trackingSecondaryTouch = true;
+                if (DEBUG) Log.d(TAG, "ACTION_POINTER_DOWN");
+                startTracking(1);
+                ga.trackGesture(ev);
                 return true;
             case MotionEvent.ACTION_POINTER_UP:
-                Log.d(TAG, "ACTION_POINTER_UP");
-                trackingSecondaryTouch = false;
+                if (DEBUG) Log.d(TAG, "ACTION_POINTER_UP");
+                if (tracking[1]) {
+                    doCallBack(ga.getGesture(ev));
+                }
+                stopTracking(1); ga.untrackGesture();
                 return true;
             case MotionEvent.ACTION_CANCEL:
-                Log.d(TAG, "ACTION_CANCEL");
+                if (DEBUG) Log.d(TAG, "ACTION_CANCEL");
                 return true;
         }
         return false;
@@ -75,6 +80,31 @@ public class SimpleFingerGestures implements View.OnTouchListener {
             case GestureAnalyser.SWIPE_1_RIGHT:
                 on1FingerGestureListener.onSwipeRight();
                 break;
+
+            case GestureAnalyser.SWIPE_2_UP:
+                on2FingerGestureListener.onSwipeUp();
+                break;
+            case GestureAnalyser.SWIPE_2_DOWN:
+                on2FingerGestureListener.onSwipeDown();
+                break;
+            case GestureAnalyser.SWIPE_2_LEFT:
+                on2FingerGestureListener.onSwipeLeft();
+                break;
+            case GestureAnalyser.SWIPE_2_RIGHT:
+                on2FingerGestureListener.onSwipeRight();
+                break;
+        }
+    }
+
+    private void startTracking (int nthPointer) {
+        for ( int i = 0; i <= nthPointer; i++) {
+            tracking[i] = true;
+        }
+    }
+    
+    private void stopTracking (int nthPointer) {
+        for ( int i = nthPointer; i < tracking.length; i++) {
+            tracking[i] = false;
         }
     }
 
@@ -91,6 +121,14 @@ public class SimpleFingerGestures implements View.OnTouchListener {
     }
 
     public interface On2FingerGestureListener {
+
+        public boolean onSwipeUp();
+
+        public boolean onSwipeDown();
+
+        public boolean onSwipeLeft();
+
+        public boolean onSwipeRight();
 
     }
 }
