@@ -31,6 +31,11 @@ public class SimpleFingerGestures implements View.OnTouchListener {
 
     /**
      * Register a callback to be invoked when 1-finger gestures take place
+     *
+     * <br></br>
+     * <p>
+     *     For the callbacks implemented via this, check the interface {@link in.championswimmer.sfg.lib.SimpleFingerGestures.On1FingerGestureListener}
+     * </p>
      * @param o1fgl The callback that will run
      */
     public void setOn1FingerGestureListener(On1FingerGestureListener o1fgl) {
@@ -39,6 +44,11 @@ public class SimpleFingerGestures implements View.OnTouchListener {
 
     /**
      * Register a callback to be invoked when 2-finger gestures take place
+     *
+     * <br></br>
+     * <p>
+     *     For the callbacks implemented via this, check the interface {@link in.championswimmer.sfg.lib.SimpleFingerGestures.On2FingerGestureListener}
+     * </p>
      * @param o2fgl The callback that will run
      */
     public void setOn2FingerGestureListener(On2FingerGestureListener o2fgl) {

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="EntryPointsManager">
+    <entry_points version="2.0" />
+  </component>
+  <component name="FrameworkDetectionExcludesConfiguration">
+    <file type="web" url="file://$PROJECT_DIR$" />
+  </component>
+  <component name="JavadocGenerationManager">
+    <option name="OUTPUT_DIRECTORY" value="$PROJECT_DIR$/documentation" />
+    <option name="OPTION_SCOPE" value="protected" />
+    <option name="OPTION_HIERARCHY" value="true" />
+    <option name="OPTION_NAVIGATOR" value="true" />
+    <option name="OPTION_INDEX" value="true" />
+    <option name="OPTION_SEPARATE_INDEX" value="true" />
+    <option name="OPTION_DOCUMENT_TAG_USE" value="true" />
+    <option name="OPTION_DOCUMENT_TAG_AUTHOR" value="true" />
+    <option name="OPTION_DOCUMENT_TAG_VERSION" value="true" />
+    <option name="OPTION_DOCUMENT_TAG_DEPRECATED" value="true" />
+    <option name="OPTION_DEPRECATED_LIST" value="true" />
+    <option name="OTHER_OPTIONS" value="-stylesheetfile /home/championswimmer/java/stylesheet.css" />
+    <option name="HEAP_SIZE" />
+    <option name="LOCALE" />
+    <option name="OPEN_IN_BROWSER" value="true" />
+    <option name="OPTION_INCLUDE_LIBS" value="false" />
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_6" assert-keyword="true" jdk-15="true" project-jdk-name="1.6" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ideadoc.IdeaDocConfigurationGUI">
+    <doccer class="nl.piraya.ideadoc.doccer.DoccerForOverridingMethod" enabled="true">
+      <template>/**$s${@inheritDoc}$s$*/</template>
+    </doccer>
+    <doccer class="nl.piraya.ideadoc.doccer.DoccerForGetter" enabled="true">
+      <template>/**$n$$s$*$s$Getter$s$for$s$property$s$'${PROPERTY_NAME}'.$n$$s$*$n$$s$*$s$@return$s$Value$s$for$s$property$s$'${PROPERTY_NAME}'.$n$$s$*/</template>
+    </doccer>
+    <doccer class="nl.piraya.ideadoc.doccer.DoccerForSetter" enabled="true">
+      <template>/**$n$$s$*$s$Setter$s$for$s$property$s$'${PROPERTY_NAME}'.$n$$s$*$n$$s$*$s$@param$s$${PARAM_NAME}$s$Value$s$to$s$set$s$for$s$property$s$'${PROPERTY_NAME}'.$n$$s$*/</template>
+    </doccer>
+    <doccer class="nl.piraya.ideadoc.doccer.DoccerForDefaultConstructor" enabled="true">
+      <template>/**$s$Constructs$s$a$s$new$s$${CLASS_NAME}.$s$*/</template>
+    </doccer>
+    <doccer class="nl.piraya.ideadoc.doccer.DoccerForPrivateDefaultConstructor" enabled="true">
+      <template>/**$s$Do$s$not$s$instantiate$s$${CLASS_NAME}.$s$*/</template>
+    </doccer>
+  </component>
+</project>
+

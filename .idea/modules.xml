@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/SimpleFingerGestures.iml" filepath="$PROJECT_DIR$/SimpleFingerGestures.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SimpleFingerGestures/SimpleFingerGestures-SimpleFingerGestures.iml" filepath="$PROJECT_DIR$/SimpleFingerGestures/SimpleFingerGestures-SimpleFingerGestures.iml" />
+      <module fileurl="file://$PROJECT_DIR$/libSFG/libSFG.iml" filepath="$PROJECT_DIR$/libSFG/libSFG.iml" />
+    </modules>
+  </component>
+</project>
+
