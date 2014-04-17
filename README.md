@@ -5,7 +5,7 @@
  The library is inside the <a href="./libSFG">libSFG</a> folder
 
 ## Sample App
- The sample App is inside the <a href="./sampleApp">sampleApp</a> folder
+ The sample App is inside the <a href="./sample">sample</a> folder
 
 
 
