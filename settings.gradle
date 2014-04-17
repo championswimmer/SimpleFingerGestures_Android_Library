@@ -1,1 +1,1 @@
-include ':SimpleFingerGestures', ':libSFG'
+include ':libSFG', 'sample'

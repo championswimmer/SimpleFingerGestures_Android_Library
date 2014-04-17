@@ -8,8 +8,8 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
-            <option value="$PROJECT_DIR$/SimpleFingerGestures" />
             <option value="$PROJECT_DIR$/libSFG" />
+            <option value="$PROJECT_DIR$/sample" />
           </set>
         </option>
       </GradleProjectSettings>

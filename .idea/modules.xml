@@ -4,7 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/SimpleFingerGestures.iml" filepath="$PROJECT_DIR$/SimpleFingerGestures.iml" />
       <module fileurl="file://$PROJECT_DIR$/libSFG/libSFG.iml" filepath="$PROJECT_DIR$/libSFG/libSFG.iml" />
-      <module fileurl="file://$PROJECT_DIR$/sampleApp/sampleApp.iml" filepath="$PROJECT_DIR$/sampleApp/sampleApp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sample/sample.iml" filepath="$PROJECT_DIR$/sample/sample.iml" />
     </modules>
   </component>
 </project>
