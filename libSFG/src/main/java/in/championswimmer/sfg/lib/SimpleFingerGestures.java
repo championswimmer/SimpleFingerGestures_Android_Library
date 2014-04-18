@@ -119,6 +119,12 @@ public class SimpleFingerGestures implements View.OnTouchListener {
             case GestureAnalyser.SWIPE_2_RIGHT:
                 on2FingerGestureListener.onSwipeRight();
                 break;
+            case GestureAnalyser.PINCH:
+                on2FingerGestureListener.onPinch();
+                break;
+            case GestureAnalyser.UNPINCH:
+                on2FingerGestureListener.onUnpinch();
+                break;
         }
     }
 
@@ -193,6 +199,9 @@ public class SimpleFingerGestures implements View.OnTouchListener {
          * @return
          */
         public boolean onSwipeRight();
+
+        public boolean onPinch();
+        public boolean onUnpinch();
 
     }
 }

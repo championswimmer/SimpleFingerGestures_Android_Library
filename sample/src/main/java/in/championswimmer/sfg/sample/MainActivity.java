@@ -73,6 +73,18 @@ public class MainActivity extends Activity {
                 Toast.makeText(getBaseContext(), "swiped 2 right", Toast.LENGTH_SHORT).show();
                 return false;
             }
+
+            @Override
+            public boolean onPinch() {
+                Toast.makeText(getBaseContext(), "pinch", Toast.LENGTH_SHORT).show();
+                return false;
+            }
+
+            @Override
+            public boolean onUnpinch() {
+                Toast.makeText(getBaseContext(), "unpinch", Toast.LENGTH_SHORT).show();
+                return false;
+            }
         });
 
         mv.setOnTouchListener(sfg);
