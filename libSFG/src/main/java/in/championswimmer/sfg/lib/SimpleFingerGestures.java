@@ -200,7 +200,16 @@ public class SimpleFingerGestures implements View.OnTouchListener {
          */
         public boolean onSwipeRight();
 
+        /**
+         * Called when user <b>pinches</b> with two fingers (bring together)
+         * @return
+         */
         public boolean onPinch();
+
+        /**
+         * Called when user <b>un-pinches</b> with two fingers (take apart)
+         * @return
+         */
         public boolean onUnpinch();
 
     }
