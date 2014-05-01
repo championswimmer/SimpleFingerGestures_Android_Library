@@ -88,6 +88,9 @@ public class SimpleFingerGestures implements View.OnTouchListener {
             case MotionEvent.ACTION_CANCEL:
                 if (DEBUG) Log.d(TAG, "ACTION_CANCEL");
                 return true;
+            case MotionEvent.ACTION_MOVE:
+                if (DEBUG) Log.d(TAG, "ACTION_MOVE");
+                return true;
         }
         return false;
     }

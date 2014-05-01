@@ -19,6 +19,7 @@ public class GestureAnalyser {
     private static final String TAG = "GestureAnalyser";
     public static final boolean DEBUG = true;
 
+    // Finished gestures flags
     public static final int SWIPE_1_UP = 11;
     public static final int SWIPE_1_DOWN = 12;
     public static final int SWIPE_1_LEFT = 13;
@@ -30,16 +31,30 @@ public class GestureAnalyser {
     public static final int PINCH = 25;
     public static final int UNPINCH = 26;
 
+    //Ongoing gesture flags
+    public static final int SWIPING_1_UP = 101;
+    public static final int SWIPING_1_DOWN = 102;
+    public static final int SWIPING_1_LEFT = 103;
+    public static final int SWIPING_1_RIGHT = 104;
+    public static final int SWIPING_2_UP = 201;
+    public static final int SWIPING_2_DOWN = 202;
+    public static final int SWIPING_2_LEFT = 203;
+    public static final int SWIPING_2_RIGHT = 204;
+    public static final int PINCHING = 205;
+    public static final int UNPINCHING = 206;
+
     private double[] initialX = new double[2];
     private double[] initialY = new double[2];
     private double[] finalX = new double[2];
     private double[] finalY = new double[2];
+    private double[] currentX = new double[2];
+    private double[] currentY = new double[2];
     private double[] delX = new double[2];
     private double[] delY = new double[3];
 
     private int numFingers = 0;
 
-    private long initialT, finalT;
+    private long initialT, finalT, currentT;
 
     public GestureAnalyser() {
     }
@@ -66,6 +81,17 @@ public class GestureAnalyser {
             delY[i] = finalY[i] - initialY[i];
         }
         finalT = SystemClock.uptimeMillis();
+        return calcGesture();
+    }
+
+    public int getOngoingGesture(MotionEvent ev) {
+        for (int i = 0; i < numFingers; i++) {
+            currentX[i] = ev.getX(i);
+            currentY[i] = ev.getY(i);
+            delX[i] = finalX[i] - initialX[i];
+            delY[i] = finalY[i] - initialY[i];
+        }
+        currentT = SystemClock.uptimeMillis();
         return calcGesture();
     }
 
