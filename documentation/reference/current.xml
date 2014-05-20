@@ -18,6 +18,19 @@
 >
 </constructor>
 <method name="getGesture"
+ return="in.championswimmer.sfg.lib.GestureAnalyser.GestureType"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="ev" type="MotionEvent">
+</parameter>
+</method>
+<method name="getOngoingGesture"
  return="int"
  abstract="false"
  native="false"
@@ -59,6 +72,28 @@
  transient="false"
  volatile="false"
  value="true"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="PINCH"
+ type="int"
+ transient="false"
+ volatile="false"
+ value="25"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="PINCHING"
+ type="int"
+ transient="false"
+ volatile="false"
+ value="205"
  static="true"
  final="true"
  deprecated="not deprecated"
@@ -153,6 +188,269 @@
  visibility="public"
 >
 </field>
+<field name="SWIPE_3_DOWN"
+ type="int"
+ transient="false"
+ volatile="false"
+ value="32"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="SWIPE_3_LEFT"
+ type="int"
+ transient="false"
+ volatile="false"
+ value="33"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="SWIPE_3_RIGHT"
+ type="int"
+ transient="false"
+ volatile="false"
+ value="34"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="SWIPE_3_UP"
+ type="int"
+ transient="false"
+ volatile="false"
+ value="31"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="SWIPE_4_DOWN"
+ type="int"
+ transient="false"
+ volatile="false"
+ value="42"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="SWIPE_4_LEFT"
+ type="int"
+ transient="false"
+ volatile="false"
+ value="43"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="SWIPE_4_RIGHT"
+ type="int"
+ transient="false"
+ volatile="false"
+ value="44"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="SWIPE_4_UP"
+ type="int"
+ transient="false"
+ volatile="false"
+ value="41"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="SWIPING_1_DOWN"
+ type="int"
+ transient="false"
+ volatile="false"
+ value="102"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="SWIPING_1_LEFT"
+ type="int"
+ transient="false"
+ volatile="false"
+ value="103"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="SWIPING_1_RIGHT"
+ type="int"
+ transient="false"
+ volatile="false"
+ value="104"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="SWIPING_1_UP"
+ type="int"
+ transient="false"
+ volatile="false"
+ value="101"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="SWIPING_2_DOWN"
+ type="int"
+ transient="false"
+ volatile="false"
+ value="202"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="SWIPING_2_LEFT"
+ type="int"
+ transient="false"
+ volatile="false"
+ value="203"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="SWIPING_2_RIGHT"
+ type="int"
+ transient="false"
+ volatile="false"
+ value="204"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="SWIPING_2_UP"
+ type="int"
+ transient="false"
+ volatile="false"
+ value="201"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="UNPINCH"
+ type="int"
+ transient="false"
+ volatile="false"
+ value="26"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="UNPINCHING"
+ type="int"
+ transient="false"
+ volatile="false"
+ value="206"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+</class>
+<class name="GestureAnalyser.GestureType"
+ extends="java.lang.Object"
+ abstract="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<constructor name="GestureAnalyser.GestureType"
+ type="in.championswimmer.sfg.lib.GestureAnalyser.GestureType"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</constructor>
+<method name="getGestureDuration"
+ return="long"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getGestureFlag"
+ return="int"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="setGestureDuration"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="gestureDuration" type="long">
+</parameter>
+</method>
+<method name="setGestureFlag"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="gestureFlag" type="int">
+</parameter>
+</method>
 </class>
 <class name="SimpleFingerGestures"
  extends="java.lang.Object"
@@ -198,7 +496,7 @@
 <parameter name="o1fgl" type="in.championswimmer.sfg.lib.SimpleFingerGestures.On1FingerGestureListener">
 </parameter>
 </method>
-<method name="setOn2FingerGestureListener"
+<method name="setOnMultiFingerGestureListener"
  return="void"
  abstract="false"
  native="false"
@@ -208,7 +506,7 @@
  deprecated="not deprecated"
  visibility="public"
 >
-<parameter name="o2fgl" type="in.championswimmer.sfg.lib.SimpleFingerGestures.OnMultiFingerGestureListener">
+<parameter name="omfgl" type="in.championswimmer.sfg.lib.SimpleFingerGestures.OnMultiFingerGestureListener">
 </parameter>
 </method>
 <field name="DEBUG"
@@ -216,6 +514,39 @@
  transient="false"
  volatile="false"
  value="true"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="GESTURE_SPEED_FAST"
+ type="long"
+ transient="false"
+ volatile="false"
+ value="500L"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="GESTURE_SPEED_MEDIUM"
+ type="long"
+ transient="false"
+ volatile="false"
+ value="1000L"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="GESTURE_SPEED_SLOW"
+ type="long"
+ transient="false"
+ volatile="false"
+ value="1500L"
  static="true"
  final="true"
  deprecated="not deprecated"
@@ -251,6 +582,8 @@
  deprecated="not deprecated"
  visibility="public"
 >
+<parameter name="gestureDuration" type="long">
+</parameter>
 </method>
 <method name="onSwipeLeft"
  return="boolean"
@@ -262,6 +595,8 @@
  deprecated="not deprecated"
  visibility="public"
 >
+<parameter name="gestureDuration" type="long">
+</parameter>
 </method>
 <method name="onSwipeRight"
  return="boolean"
@@ -273,6 +608,8 @@
  deprecated="not deprecated"
  visibility="public"
 >
+<parameter name="gestureDuration" type="long">
+</parameter>
 </method>
 <method name="onSwipeUp"
  return="boolean"
@@ -284,15 +621,32 @@
  deprecated="not deprecated"
  visibility="public"
 >
+<parameter name="gestureDuration" type="long">
+</parameter>
 </method>
 </interface>
-<interface name="SimpleFingerGestures.On2FingerGestureListener"
+<interface name="SimpleFingerGestures.OnMultiFingerGestureListener"
  abstract="true"
  static="true"
  final="false"
  deprecated="not deprecated"
  visibility="public"
 >
+<method name="onPinch"
+ return="boolean"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="fingers" type="int">
+</parameter>
+<parameter name="gestureDuration" type="long">
+</parameter>
+</method>
 <method name="onSwipeDown"
  return="boolean"
  abstract="true"
@@ -303,6 +657,10 @@
  deprecated="not deprecated"
  visibility="public"
 >
+<parameter name="fingers" type="int">
+</parameter>
+<parameter name="gestureDuration" type="long">
+</parameter>
 </method>
 <method name="onSwipeLeft"
  return="boolean"
@@ -314,6 +672,10 @@
  deprecated="not deprecated"
  visibility="public"
 >
+<parameter name="fingers" type="int">
+</parameter>
+<parameter name="gestureDuration" type="long">
+</parameter>
 </method>
 <method name="onSwipeRight"
  return="boolean"
@@ -325,6 +687,10 @@
  deprecated="not deprecated"
  visibility="public"
 >
+<parameter name="fingers" type="int">
+</parameter>
+<parameter name="gestureDuration" type="long">
+</parameter>
 </method>
 <method name="onSwipeUp"
  return="boolean"
@@ -336,6 +702,25 @@
  deprecated="not deprecated"
  visibility="public"
 >
+<parameter name="fingers" type="int">
+</parameter>
+<parameter name="gestureDuration" type="long">
+</parameter>
+</method>
+<method name="onUnpinch"
+ return="boolean"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="fingers" type="int">
+</parameter>
+<parameter name="gestureDuration" type="long">
+</parameter>
 </method>
 </interface>
 </package>
