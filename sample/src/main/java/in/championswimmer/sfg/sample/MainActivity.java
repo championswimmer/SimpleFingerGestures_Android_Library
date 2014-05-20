@@ -85,6 +85,32 @@ public class MainActivity extends Activity {
             }
         });
 
+        sfg.setOn3FingerGestureListener(new SimpleFingerGestures.On3FingerGestureListener() {
+            @Override
+            public boolean onSwipeUp(long gestureDuration) {
+                Toast.makeText(getBaseContext(), "swiped 3 up", Toast.LENGTH_SHORT).show();
+                return false;
+            }
+
+            @Override
+            public boolean onSwipeDown(long gestureDuration) {
+                Toast.makeText(getBaseContext(), "swiped 3 down", Toast.LENGTH_SHORT).show();
+                return false;
+            }
+
+            @Override
+            public boolean onSwipeLeft(long gestureDuration) {
+                Toast.makeText(getBaseContext(), "swiped 3 left", Toast.LENGTH_SHORT).show();
+                return false;
+            }
+
+            @Override
+            public boolean onSwipeRight(long gestureDuration) {
+                Toast.makeText(getBaseContext(), "swiped 3 right", Toast.LENGTH_SHORT).show();
+                return false;
+            }
+        });
+
         mv.setOnTouchListener(sfg);
 
     }

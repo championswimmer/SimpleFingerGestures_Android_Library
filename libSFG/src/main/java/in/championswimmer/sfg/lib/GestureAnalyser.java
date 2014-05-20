@@ -53,6 +53,11 @@ public class GestureAnalyser {
     public static final int SWIPE_2_DOWN = 22;
     public static final int SWIPE_2_LEFT = 23;
     public static final int SWIPE_2_RIGHT = 24;
+    public static final int SWIPE_3_UP = 31;
+    public static final int SWIPE_3_DOWN = 32;
+    public static final int SWIPE_3_LEFT = 33;
+    public static final int SWIPE_3_RIGHT = 34;
+
     public static final int PINCH = 25;
     public static final int UNPINCH = 26;
 
@@ -68,14 +73,14 @@ public class GestureAnalyser {
     public static final int PINCHING = 205;
     public static final int UNPINCHING = 206;
 
-    private double[] initialX = new double[2];
-    private double[] initialY = new double[2];
-    private double[] finalX = new double[2];
-    private double[] finalY = new double[2];
-    private double[] currentX = new double[2];
-    private double[] currentY = new double[2];
-    private double[] delX = new double[2];
-    private double[] delY = new double[3];
+    private double[] initialX = new double[5];
+    private double[] initialY = new double[5];
+    private double[] finalX = new double[5];
+    private double[] finalY = new double[5];
+    private double[] currentX = new double[5];
+    private double[] currentY = new double[5];
+    private double[] delX = new double[5];
+    private double[] delY = new double[5];
 
     private int numFingers = 0;
 
@@ -160,6 +165,28 @@ public class GestureAnalyser {
             if (finalFingDist(0,1) < 0.5*(initialFingDist(0,1))) {
                 return PINCH;
             }
+        }
+        if (numFingers == 3) {
+            if (((-delY[0]) > (2 * Math.abs(delX[0]))) && ((-delY[1]) > (2 * Math.abs(delX[1]))) && ((-delY[2]) > (2 * Math.abs(delX[2])))) {
+                return SWIPE_3_UP;
+            }
+            if (((delY[0]) > (2 * Math.abs(delX[0]))) && ((delY[1]) > (2 * Math.abs(delX[1]))) && ((delY[2]) > (2 * Math.abs(delX[2])))) {
+                return SWIPE_3_DOWN;
+            }
+            if (((-delX[0]) > (2 * Math.abs(delY[0]))) && ((-delX[1]) > (2 * Math.abs(delY[1]))) && ((-delX[2]) > (2 * Math.abs(delY[2])))) {
+                return SWIPE_3_LEFT;
+            }
+            if (((delX[0]) > (2 * Math.abs(delY[0]))) && ((delX[1]) > (2 * Math.abs(delY[1]))) && ((delX[2]) > (2 * Math.abs(delY[2])))) {
+                return SWIPE_3_RIGHT;
+            }
+            /*
+            if (finalFingDist(0,1) > 2*(initialFingDist(0,1))) {
+                return UNPINCH;
+            }
+            if (finalFingDist(0,1) < 0.5*(initialFingDist(0,1))) {
+                return PINCH;
+            }
+            */
         }
         return 0;
     }
