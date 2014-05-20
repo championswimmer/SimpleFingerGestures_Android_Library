@@ -19,6 +19,31 @@ public class GestureAnalyser {
     private static final String TAG = "GestureAnalyser";
     public static final boolean DEBUG = true;
 
+    public class GestureType {
+        private int gestureFlag;
+        private long gestureDuration;
+
+
+        public long getGestureDuration() {
+            return gestureDuration;
+        }
+
+        public void setGestureDuration(long gestureDuration) {
+            this.gestureDuration = gestureDuration;
+        }
+
+
+        public int getGestureFlag() {
+            return gestureFlag;
+        }
+
+        public void setGestureFlag(int gestureFlag) {
+            this.gestureFlag = gestureFlag;
+        }
+
+
+    }
+
     // Finished gestures flags
     public static final int SWIPE_1_UP = 11;
     public static final int SWIPE_1_DOWN = 12;
@@ -73,7 +98,7 @@ public class GestureAnalyser {
         numFingers = 0;
     }
 
-    public int getGesture(MotionEvent ev) {
+    public GestureType getGesture(MotionEvent ev) {
         for (int i = 0; i < numFingers; i++) {
             finalX[i] = ev.getX(i);
             finalY[i] = ev.getY(i);
@@ -81,7 +106,10 @@ public class GestureAnalyser {
             delY[i] = finalY[i] - initialY[i];
         }
         finalT = SystemClock.uptimeMillis();
-        return calcGesture();
+        GestureType gt = new GestureType();
+        gt.setGestureFlag(calcGesture());
+        gt.setGestureDuration(finalT-initialT);
+        return gt;
     }
 
     public int getOngoingGesture(MotionEvent ev) {

@@ -22,6 +22,12 @@ public class SimpleFingerGestures implements View.OnTouchListener {
     private On1FingerGestureListener on1FingerGestureListener;
     private On2FingerGestureListener on2FingerGestureListener;
 
+    // Will see if these need to be used. For now just returning duration in milliS
+    public static final long GESTURE_SPEED_SLOW = 1500;
+    public static final long GESTURE_SPEED_MEDIUM = 1000;
+    public static final long GESTURE_SPEED_FAST = 500;
+
+
     /**
      * Constructor that creates an internal {@link in.championswimmer.sfg.lib.GestureAnalyser } object as well
      */
@@ -95,38 +101,38 @@ public class SimpleFingerGestures implements View.OnTouchListener {
         return false;
     }
 
-    private void doCallBack(int gestureFlag) {
-        switch (gestureFlag) {
+    private void doCallBack(GestureAnalyser.GestureType mGt) {
+        switch (mGt.getGestureFlag()) {
             case GestureAnalyser.SWIPE_1_UP:
-                on1FingerGestureListener.onSwipeUp();
+                on1FingerGestureListener.onSwipeUp(mGt.getGestureDuration());
                 break;
             case GestureAnalyser.SWIPE_1_DOWN:
-                on1FingerGestureListener.onSwipeDown();
+                on1FingerGestureListener.onSwipeDown(mGt.getGestureDuration());
                 break;
             case GestureAnalyser.SWIPE_1_LEFT:
-                on1FingerGestureListener.onSwipeLeft();
+                on1FingerGestureListener.onSwipeLeft(mGt.getGestureDuration());
                 break;
             case GestureAnalyser.SWIPE_1_RIGHT:
-                on1FingerGestureListener.onSwipeRight();
+                on1FingerGestureListener.onSwipeRight(mGt.getGestureDuration());
                 break;
 
             case GestureAnalyser.SWIPE_2_UP:
-                on2FingerGestureListener.onSwipeUp();
+                on2FingerGestureListener.onSwipeUp(mGt.getGestureDuration());
                 break;
             case GestureAnalyser.SWIPE_2_DOWN:
-                on2FingerGestureListener.onSwipeDown();
+                on2FingerGestureListener.onSwipeDown(mGt.getGestureDuration());
                 break;
             case GestureAnalyser.SWIPE_2_LEFT:
-                on2FingerGestureListener.onSwipeLeft();
+                on2FingerGestureListener.onSwipeLeft(mGt.getGestureDuration());
                 break;
             case GestureAnalyser.SWIPE_2_RIGHT:
-                on2FingerGestureListener.onSwipeRight();
+                on2FingerGestureListener.onSwipeRight(mGt.getGestureDuration());
                 break;
             case GestureAnalyser.PINCH:
-                on2FingerGestureListener.onPinch();
+                on2FingerGestureListener.onPinch(mGt.getGestureDuration());
                 break;
             case GestureAnalyser.UNPINCH:
-                on2FingerGestureListener.onUnpinch();
+                on2FingerGestureListener.onUnpinch(mGt.getGestureDuration());
                 break;
         }
     }
@@ -151,26 +157,30 @@ public class SimpleFingerGestures implements View.OnTouchListener {
         /**
          * Called when user swipes <b>up</b> with one finger
          * @return
+         * @param gestureDuration
          */
-        public boolean onSwipeUp();
+        public boolean onSwipeUp(long gestureDuration);
 
         /**
          * Called when user swipes <b>down</b> with one finger
          * @return
+         * @param gestureDuration
          */
-        public boolean onSwipeDown();
+        public boolean onSwipeDown(long gestureDuration);
 
         /**
          * Called when user swipes <b>left</b> with one finger
          * @return
+         * @param gestureDuration
          */
-        public boolean onSwipeLeft();
+        public boolean onSwipeLeft(long gestureDuration);
 
         /**
          * Called when user swipes <b>right</b> with one finger
          * @return
+         * @param gestureDuration
          */
-        public boolean onSwipeRight();
+        public boolean onSwipeRight(long gestureDuration);
 
     }
 
@@ -182,38 +192,44 @@ public class SimpleFingerGestures implements View.OnTouchListener {
         /**
          * Called when user swipes <b>up</b> with two fingers
          * @return
+         * @param gestureDuration duration in milliSeconds
          */
-        public boolean onSwipeUp();
+        public boolean onSwipeUp(long gestureDuration);
 
         /**
          * Called when user swipes <b>down</b> with two fingers
          * @return
+         * @param gestureDuration duration in milliSeconds
          */
-        public boolean onSwipeDown();
+        public boolean onSwipeDown(long gestureDuration);
 
         /**
          * Called when user swipes <b>left</b> with two fingers
          * @return
+         * @param gestureDuration duration in milliSeconds
          */
-        public boolean onSwipeLeft();
+        public boolean onSwipeLeft(long gestureDuration);
 
         /**
          * Called when user swipes <b>right</b> with two fingers
          * @return
+         * @param gestureDuration duration in milliSeconds
          */
-        public boolean onSwipeRight();
+        public boolean onSwipeRight(long gestureDuration);
 
         /**
          * Called when user <b>pinches</b> with two fingers (bring together)
          * @return
+         * @param gestureDuration duration in milliSeconds
          */
-        public boolean onPinch();
+        public boolean onPinch(long gestureDuration);
 
         /**
          * Called when user <b>un-pinches</b> with two fingers (take apart)
          * @return
+         * @param gestureDuration duration in milliSeconds
          */
-        public boolean onUnpinch();
+        public boolean onUnpinch(long gestureDuration);
 
     }
 }
