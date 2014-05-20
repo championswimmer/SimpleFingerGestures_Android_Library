@@ -47,69 +47,45 @@ public class MainActivity extends Activity {
             }
         });
 
-        sfg.setOn2FingerGestureListener(new SimpleFingerGestures.On2FingerGestureListener() {
+        sfg.setOnMultiFingerGestureListener(new SimpleFingerGestures.OnMultiFingerGestureListener() {
             @Override
-            public boolean onSwipeUp(long gestureDuration) {
-                Toast.makeText(getBaseContext(), "swiped 2 up", Toast.LENGTH_SHORT).show();
+            public boolean onSwipeUp(int fingers, long gestureDuration) {
+                Toast.makeText(getBaseContext(), "swiped "+ fingers + " up", Toast.LENGTH_SHORT).show();
                 return false;
             }
 
             @Override
-            public boolean onSwipeDown(long gestureDuration) {
-                Toast.makeText(getBaseContext(), "swiped 2 down", Toast.LENGTH_SHORT).show();
+            public boolean onSwipeDown(int fingers, long gestureDuration) {
+                Toast.makeText(getBaseContext(), "swiped "+ fingers + " down", Toast.LENGTH_SHORT).show();
                 return false;
             }
 
             @Override
-            public boolean onSwipeLeft(long gestureDuration) {
-                Toast.makeText(getBaseContext(), "swiped 2 left", Toast.LENGTH_SHORT).show();
+            public boolean onSwipeLeft(int fingers, long gestureDuration) {
+                Toast.makeText(getBaseContext(), "swiped "+ fingers + " left", Toast.LENGTH_SHORT).show();
                 return false;
             }
 
             @Override
-            public boolean onSwipeRight(long gestureDuration) {
-                Toast.makeText(getBaseContext(), "swiped 2 right", Toast.LENGTH_SHORT).show();
+            public boolean onSwipeRight(int fingers, long gestureDuration) {
+                Toast.makeText(getBaseContext(), "swiped "+ fingers + " right", Toast.LENGTH_SHORT).show();
                 return false;
             }
 
             @Override
-            public boolean onPinch(long gestureDuration) {
+            public boolean onPinch(int fingers, long gestureDuration) {
                 Toast.makeText(getBaseContext(), "pinch", Toast.LENGTH_SHORT).show();
                 return false;
             }
 
             @Override
-            public boolean onUnpinch(long gestureDuration) {
+            public boolean onUnpinch(int fingers, long gestureDuration) {
                 Toast.makeText(getBaseContext(), "unpinch", Toast.LENGTH_SHORT).show();
                 return false;
             }
         });
 
-        sfg.setOn3FingerGestureListener(new SimpleFingerGestures.On3FingerGestureListener() {
-            @Override
-            public boolean onSwipeUp(long gestureDuration) {
-                Toast.makeText(getBaseContext(), "swiped 3 up", Toast.LENGTH_SHORT).show();
-                return false;
-            }
 
-            @Override
-            public boolean onSwipeDown(long gestureDuration) {
-                Toast.makeText(getBaseContext(), "swiped 3 down", Toast.LENGTH_SHORT).show();
-                return false;
-            }
-
-            @Override
-            public boolean onSwipeLeft(long gestureDuration) {
-                Toast.makeText(getBaseContext(), "swiped 3 left", Toast.LENGTH_SHORT).show();
-                return false;
-            }
-
-            @Override
-            public boolean onSwipeRight(long gestureDuration) {
-                Toast.makeText(getBaseContext(), "swiped 3 right", Toast.LENGTH_SHORT).show();
-                return false;
-            }
-        });
 
         mv.setOnTouchListener(sfg);
 

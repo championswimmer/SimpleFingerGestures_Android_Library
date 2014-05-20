@@ -208,7 +208,7 @@
  deprecated="not deprecated"
  visibility="public"
 >
-<parameter name="o2fgl" type="in.championswimmer.sfg.lib.SimpleFingerGestures.On2FingerGestureListener">
+<parameter name="o2fgl" type="in.championswimmer.sfg.lib.SimpleFingerGestures.OnMultiFingerGestureListener">
 </parameter>
 </method>
 <field name="DEBUG"

@@ -20,8 +20,7 @@ public class SimpleFingerGestures implements View.OnTouchListener {
 
     private GestureAnalyser ga;
     private On1FingerGestureListener on1FingerGestureListener;
-    private On2FingerGestureListener on2FingerGestureListener;
-    private On3FingerGestureListener on3FingerGestureListener;
+    private OnMultiFingerGestureListener onMultiFingerGestureListener;
 
     // Will see if these need to be used. For now just returning duration in milliS
     public static final long GESTURE_SPEED_SLOW = 1500;
@@ -50,30 +49,19 @@ public class SimpleFingerGestures implements View.OnTouchListener {
     }
 
     /**
-     * Register a callback to be invoked when 2-finger gestures take place
+     * Register a callback to be invoked when multi-finger gestures take place
      *
      * <br></br>
      * <p>
-     *     For the callbacks implemented via this, check the interface {@link in.championswimmer.sfg.lib.SimpleFingerGestures.On2FingerGestureListener}
+     *     For the callbacks implemented via this, check the interface {@link in.championswimmer.sfg.lib.SimpleFingerGestures.OnMultiFingerGestureListener}
      * </p>
-     * @param o2fgl The callback that will run
+     * @param omfgl The callback that will run
      */
-    public void setOn2FingerGestureListener(On2FingerGestureListener o2fgl) {
-        on2FingerGestureListener = o2fgl;
+    public void setOnMultiFingerGestureListener(OnMultiFingerGestureListener omfgl) {
+        onMultiFingerGestureListener = omfgl;
     }
 
-    /**
-     * Register a callback to be invoked when 3-finger gestures take place
-     *
-     * <br></br>
-     * <p>
-     *     For the callbacks implemented via this, check the interface {@link in.championswimmer.sfg.lib.SimpleFingerGestures.On3FingerGestureListener}
-     * </p>
-     * @param o3fgl The callback that will run
-     */
-    public void setOn3FingerGestureListener(On3FingerGestureListener o3fgl) {
-        on3FingerGestureListener = o3fgl;
-    }
+
 
     @Override
     public boolean onTouch(View view, MotionEvent ev) {
@@ -131,35 +119,48 @@ public class SimpleFingerGestures implements View.OnTouchListener {
                 break;
 
             case GestureAnalyser.SWIPE_2_UP:
-                on2FingerGestureListener.onSwipeUp(mGt.getGestureDuration());
+                onMultiFingerGestureListener.onSwipeUp(2, mGt.getGestureDuration());
                 break;
             case GestureAnalyser.SWIPE_2_DOWN:
-                on2FingerGestureListener.onSwipeDown(mGt.getGestureDuration());
+                onMultiFingerGestureListener.onSwipeDown(2, mGt.getGestureDuration());
                 break;
             case GestureAnalyser.SWIPE_2_LEFT:
-                on2FingerGestureListener.onSwipeLeft(mGt.getGestureDuration());
+                onMultiFingerGestureListener.onSwipeLeft(2, mGt.getGestureDuration());
                 break;
             case GestureAnalyser.SWIPE_2_RIGHT:
-                on2FingerGestureListener.onSwipeRight(mGt.getGestureDuration());
+                onMultiFingerGestureListener.onSwipeRight(2, mGt.getGestureDuration());
                 break;
             case GestureAnalyser.PINCH:
-                on2FingerGestureListener.onPinch(mGt.getGestureDuration());
+                onMultiFingerGestureListener.onPinch(2, mGt.getGestureDuration());
                 break;
             case GestureAnalyser.UNPINCH:
-                on2FingerGestureListener.onUnpinch(mGt.getGestureDuration());
+                onMultiFingerGestureListener.onUnpinch(2, mGt.getGestureDuration());
                 break;
 
             case GestureAnalyser.SWIPE_3_UP:
-                on3FingerGestureListener.onSwipeUp(mGt.getGestureDuration());
+                onMultiFingerGestureListener.onSwipeUp(3, mGt.getGestureDuration());
                 break;
             case GestureAnalyser.SWIPE_3_DOWN:
-                on3FingerGestureListener.onSwipeDown(mGt.getGestureDuration());
+                onMultiFingerGestureListener.onSwipeDown(3, mGt.getGestureDuration());
                 break;
             case GestureAnalyser.SWIPE_3_LEFT:
-                on3FingerGestureListener.onSwipeLeft(mGt.getGestureDuration());
+                onMultiFingerGestureListener.onSwipeLeft(3, mGt.getGestureDuration());
                 break;
             case GestureAnalyser.SWIPE_3_RIGHT:
-                on3FingerGestureListener.onSwipeRight(mGt.getGestureDuration());
+                onMultiFingerGestureListener.onSwipeRight(3, mGt.getGestureDuration());
+                break;
+
+            case GestureAnalyser.SWIPE_4_UP:
+                onMultiFingerGestureListener.onSwipeUp(4, mGt.getGestureDuration());
+                break;
+            case GestureAnalyser.SWIPE_4_DOWN:
+                onMultiFingerGestureListener.onSwipeDown(4, mGt.getGestureDuration());
+                break;
+            case GestureAnalyser.SWIPE_4_LEFT:
+                onMultiFingerGestureListener.onSwipeLeft(4, mGt.getGestureDuration());
+                break;
+            case GestureAnalyser.SWIPE_4_RIGHT:
+                onMultiFingerGestureListener.onSwipeRight(4, mGt.getGestureDuration());
                 break;
         }
     }
@@ -214,84 +215,55 @@ public class SimpleFingerGestures implements View.OnTouchListener {
     /**
      * Interface definition for the callback to be invoked when 2-finger gestures are performed
      */
-    public interface On2FingerGestureListener {
+    public interface OnMultiFingerGestureListener {
 
         /**
          * Called when user swipes <b>up</b> with two fingers
          * @return
+         * @param fingers number of fingers involved in this gesture
          * @param gestureDuration duration in milliSeconds
          */
-        public boolean onSwipeUp(long gestureDuration);
+        public boolean onSwipeUp(int fingers, long gestureDuration);
 
         /**
          * Called when user swipes <b>down</b> with two fingers
          * @return
+         * @param fingers number of fingers involved in this gesture
          * @param gestureDuration duration in milliSeconds
          */
-        public boolean onSwipeDown(long gestureDuration);
+        public boolean onSwipeDown(int fingers, long gestureDuration);
 
         /**
          * Called when user swipes <b>left</b> with two fingers
          * @return
+         * @param fingers number of fingers involved in this gesture
          * @param gestureDuration duration in milliSeconds
          */
-        public boolean onSwipeLeft(long gestureDuration);
+        public boolean onSwipeLeft(int fingers, long gestureDuration);
 
         /**
          * Called when user swipes <b>right</b> with two fingers
          * @return
+         * @param fingers number of fingers involved in this gesture
          * @param gestureDuration duration in milliSeconds
          */
-        public boolean onSwipeRight(long gestureDuration);
+        public boolean onSwipeRight(int fingers, long gestureDuration);
 
         /**
          * Called when user <b>pinches</b> with two fingers (bring together)
          * @return
+         * @param fingers number of fingers involved in this gesture
          * @param gestureDuration duration in milliSeconds
          */
-        public boolean onPinch(long gestureDuration);
+        public boolean onPinch(int fingers, long gestureDuration);
 
         /**
          * Called when user <b>un-pinches</b> with two fingers (take apart)
          * @return
+         * @param fingers number of fingers involved in this gesture
          * @param gestureDuration duration in milliSeconds
          */
-        public boolean onUnpinch(long gestureDuration);
-
-    }
-
-    /**
-     * Interface definition for the callback to be invoked when 3-finger gestures are performed
-     */
-    public interface On3FingerGestureListener {
-
-        /**
-         * Called when user swipes <b>up</b> with three fingers
-         * @return
-         * @param gestureDuration duration in milliSeconds
-         */
-        public boolean onSwipeUp(long gestureDuration);
-
-        /**
-         * Called when user swipes <b>down</b> with three fingers
-         * @return
-         * @param gestureDuration duration in milliSeconds
-         */
-        public boolean onSwipeDown(long gestureDuration);
-
-        /**
-         * Called when user swipes <b>left</b> with three fingers
-         * @return
-         * @param gestureDuration duration in milliSeconds
-         */
-        public boolean onSwipeLeft(long gestureDuration);
-
-        /**
-         * Called when user swipes <b>right</b> with three fingers
-         * @return
-         * @param gestureDuration duration in milliSeconds
-         */
-        public boolean onSwipeRight(long gestureDuration);
+        public boolean onUnpinch(int fingers, long gestureDuration);
 
     }
 }
