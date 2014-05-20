@@ -6,26 +6,21 @@ import android.view.View;
 
 /**
  * @author championswimmer
- * @since 0.1 12/04/14
  * @version 0.2
- *
+ * @since 0.1 12/04/14
  */
 public class SimpleFingerGestures implements View.OnTouchListener {
 
-    private static final String TAG = "SimpleFingerGestures";
     public static final boolean DEBUG = true;
-
-    protected boolean tracking[] = {false, false, false, false, false};
-
-
-    private GestureAnalyser ga;
-    private On1FingerGestureListener on1FingerGestureListener;
-    private OnMultiFingerGestureListener onMultiFingerGestureListener;
-
     // Will see if these need to be used. For now just returning duration in milliS
     public static final long GESTURE_SPEED_SLOW = 1500;
     public static final long GESTURE_SPEED_MEDIUM = 1000;
     public static final long GESTURE_SPEED_FAST = 500;
+    private static final String TAG = "SimpleFingerGestures";
+    protected boolean tracking[] = {false, false, false, false, false};
+    private GestureAnalyser ga;
+    private On1FingerGestureListener on1FingerGestureListener;
+    private OnMultiFingerGestureListener onMultiFingerGestureListener;
 
 
     /**
@@ -37,11 +32,12 @@ public class SimpleFingerGestures implements View.OnTouchListener {
 
     /**
      * Register a callback to be invoked when 1-finger gestures take place
-     *
+     * <p/>
      * <br></br>
      * <p>
-     *     For the callbacks implemented via this, check the interface {@link in.championswimmer.sfg.lib.SimpleFingerGestures.On1FingerGestureListener}
+     * For the callbacks implemented via this, check the interface {@link in.championswimmer.sfg.lib.SimpleFingerGestures.On1FingerGestureListener}
      * </p>
+     *
      * @param o1fgl The callback that will run
      */
     public void setOn1FingerGestureListener(On1FingerGestureListener o1fgl) {
@@ -50,17 +46,17 @@ public class SimpleFingerGestures implements View.OnTouchListener {
 
     /**
      * Register a callback to be invoked when multi-finger gestures take place
-     *
+     * <p/>
      * <br></br>
      * <p>
-     *     For the callbacks implemented via this, check the interface {@link in.championswimmer.sfg.lib.SimpleFingerGestures.OnMultiFingerGestureListener}
+     * For the callbacks implemented via this, check the interface {@link in.championswimmer.sfg.lib.SimpleFingerGestures.OnMultiFingerGestureListener}
      * </p>
+     *
      * @param omfgl The callback that will run
      */
     public void setOnMultiFingerGestureListener(OnMultiFingerGestureListener omfgl) {
         onMultiFingerGestureListener = omfgl;
     }
-
 
 
     @Override
@@ -82,7 +78,7 @@ public class SimpleFingerGestures implements View.OnTouchListener {
                 return true;
             case MotionEvent.ACTION_POINTER_DOWN:
                 if (DEBUG) Log.d(TAG, "ACTION_POINTER_DOWN" + " " + "num" + ev.getPointerCount());
-                startTracking(ev.getPointerCount()-1);
+                startTracking(ev.getPointerCount() - 1);
                 ga.trackGesture(ev);
                 return true;
             case MotionEvent.ACTION_POINTER_UP:
@@ -90,7 +86,7 @@ public class SimpleFingerGestures implements View.OnTouchListener {
                 if (tracking[1]) {
                     doCallBack(ga.getGesture(ev));
                 }
-                stopTracking(ev.getPointerCount()-1);
+                stopTracking(ev.getPointerCount() - 1);
                 ga.untrackGesture();
                 return true;
             case MotionEvent.ACTION_CANCEL:
@@ -184,29 +180,33 @@ public class SimpleFingerGestures implements View.OnTouchListener {
     public interface On1FingerGestureListener {
         /**
          * Called when user swipes <b>up</b> with one finger
-         * @return
+         *
          * @param gestureDuration
+         * @return
          */
         public boolean onSwipeUp(long gestureDuration);
 
         /**
          * Called when user swipes <b>down</b> with one finger
-         * @return
+         *
          * @param gestureDuration
+         * @return
          */
         public boolean onSwipeDown(long gestureDuration);
 
         /**
          * Called when user swipes <b>left</b> with one finger
-         * @return
+         *
          * @param gestureDuration
+         * @return
          */
         public boolean onSwipeLeft(long gestureDuration);
 
         /**
          * Called when user swipes <b>right</b> with one finger
-         * @return
+         *
          * @param gestureDuration
+         * @return
          */
         public boolean onSwipeRight(long gestureDuration);
 
@@ -219,49 +219,55 @@ public class SimpleFingerGestures implements View.OnTouchListener {
 
         /**
          * Called when user swipes <b>up</b> with two fingers
-         * @return
-         * @param fingers number of fingers involved in this gesture
+         *
+         * @param fingers         number of fingers involved in this gesture
          * @param gestureDuration duration in milliSeconds
+         * @return
          */
         public boolean onSwipeUp(int fingers, long gestureDuration);
 
         /**
          * Called when user swipes <b>down</b> with two fingers
-         * @return
-         * @param fingers number of fingers involved in this gesture
+         *
+         * @param fingers         number of fingers involved in this gesture
          * @param gestureDuration duration in milliSeconds
+         * @return
          */
         public boolean onSwipeDown(int fingers, long gestureDuration);
 
         /**
          * Called when user swipes <b>left</b> with two fingers
-         * @return
-         * @param fingers number of fingers involved in this gesture
+         *
+         * @param fingers         number of fingers involved in this gesture
          * @param gestureDuration duration in milliSeconds
+         * @return
          */
         public boolean onSwipeLeft(int fingers, long gestureDuration);
 
         /**
          * Called when user swipes <b>right</b> with two fingers
-         * @return
-         * @param fingers number of fingers involved in this gesture
+         *
+         * @param fingers         number of fingers involved in this gesture
          * @param gestureDuration duration in milliSeconds
+         * @return
          */
         public boolean onSwipeRight(int fingers, long gestureDuration);
 
         /**
          * Called when user <b>pinches</b> with two fingers (bring together)
-         * @return
-         * @param fingers number of fingers involved in this gesture
+         *
+         * @param fingers         number of fingers involved in this gesture
          * @param gestureDuration duration in milliSeconds
+         * @return
          */
         public boolean onPinch(int fingers, long gestureDuration);
 
         /**
          * Called when user <b>un-pinches</b> with two fingers (take apart)
-         * @return
-         * @param fingers number of fingers involved in this gesture
+         *
+         * @param fingers         number of fingers involved in this gesture
          * @param gestureDuration duration in milliSeconds
+         * @return
          */
         public boolean onUnpinch(int fingers, long gestureDuration);
 

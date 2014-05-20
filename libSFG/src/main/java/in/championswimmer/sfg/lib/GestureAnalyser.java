@@ -1,49 +1,18 @@
 package in.championswimmer.sfg.lib;
 
 import android.os.SystemClock;
-import android.provider.Settings;
 import android.view.MotionEvent;
-
-import java.math.MathContext;
 
 /**
  * Internal API class to analyse the recorded gestures.
  *
  * @author championswimmer
- * @since 0.1 12/04/14
  * @version 0.2
- *
+ * @since 0.1 12/04/14
  */
 public class GestureAnalyser {
 
-    private static final String TAG = "GestureAnalyser";
     public static final boolean DEBUG = true;
-
-    public class GestureType {
-        private int gestureFlag;
-        private long gestureDuration;
-
-
-        public long getGestureDuration() {
-            return gestureDuration;
-        }
-
-        public void setGestureDuration(long gestureDuration) {
-            this.gestureDuration = gestureDuration;
-        }
-
-
-        public int getGestureFlag() {
-            return gestureFlag;
-        }
-
-        public void setGestureFlag(int gestureFlag) {
-            this.gestureFlag = gestureFlag;
-        }
-
-
-    }
-
     // Finished gestures flags
     public static final int SWIPE_1_UP = 11;
     public static final int SWIPE_1_DOWN = 12;
@@ -61,11 +30,8 @@ public class GestureAnalyser {
     public static final int SWIPE_4_DOWN = 42;
     public static final int SWIPE_4_LEFT = 43;
     public static final int SWIPE_4_RIGHT = 44;
-
-
     public static final int PINCH = 25;
     public static final int UNPINCH = 26;
-
     //Ongoing gesture flags
     public static final int SWIPING_1_UP = 101;
     public static final int SWIPING_1_DOWN = 102;
@@ -77,7 +43,7 @@ public class GestureAnalyser {
     public static final int SWIPING_2_RIGHT = 204;
     public static final int PINCHING = 205;
     public static final int UNPINCHING = 206;
-
+    private static final String TAG = "GestureAnalyser";
     private double[] initialX = new double[5];
     private double[] initialY = new double[5];
     private double[] finalX = new double[5];
@@ -86,9 +52,7 @@ public class GestureAnalyser {
     private double[] currentY = new double[5];
     private double[] delX = new double[5];
     private double[] delY = new double[5];
-
     private int numFingers = 0;
-
     private long initialT, finalT, currentT;
 
     public GestureAnalyser() {
@@ -118,7 +82,7 @@ public class GestureAnalyser {
         finalT = SystemClock.uptimeMillis();
         GestureType gt = new GestureType();
         gt.setGestureFlag(calcGesture());
-        gt.setGestureDuration(finalT-initialT);
+        gt.setGestureDuration(finalT - initialT);
         return gt;
     }
 
@@ -164,10 +128,10 @@ public class GestureAnalyser {
             if (((delX[0]) > (2 * Math.abs(delY[0]))) && ((delX[1]) > (2 * Math.abs(delY[1])))) {
                 return SWIPE_2_RIGHT;
             }
-            if (finalFingDist(0,1) > 2*(initialFingDist(0,1))) {
+            if (finalFingDist(0, 1) > 2 * (initialFingDist(0, 1))) {
                 return UNPINCH;
             }
-            if (finalFingDist(0,1) < 0.5*(initialFingDist(0,1))) {
+            if (finalFingDist(0, 1) < 0.5 * (initialFingDist(0, 1))) {
                 return PINCH;
             }
         }
@@ -202,19 +166,19 @@ public class GestureAnalyser {
             */
         }
         if (numFingers == 4) {
-            if (       ((-delY[0]) > (2 * Math.abs(delX[0])))
+            if (((-delY[0]) > (2 * Math.abs(delX[0])))
                     && ((-delY[1]) > (2 * Math.abs(delX[1])))
                     && ((-delY[2]) > (2 * Math.abs(delX[2])))
                     && ((-delY[3]) > (2 * Math.abs(delX[3])))) {
                 return SWIPE_4_UP;
             }
-            if (       ((delY[0]) > (2 * Math.abs(delX[0])))
+            if (((delY[0]) > (2 * Math.abs(delX[0])))
                     && ((delY[1]) > (2 * Math.abs(delX[1])))
                     && ((delY[2]) > (2 * Math.abs(delX[2])))
                     && ((delY[3]) > (2 * Math.abs(delX[3])))) {
                 return SWIPE_4_DOWN;
             }
-            if (       ((-delX[0]) > (2 * Math.abs(delY[0])))
+            if (((-delX[0]) > (2 * Math.abs(delY[0])))
                     && ((-delX[1]) > (2 * Math.abs(delY[1])))
                     && ((-delX[2]) > (2 * Math.abs(delY[2])))
                     && ((-delX[3]) > (2 * Math.abs(delY[3])))) {
@@ -237,17 +201,42 @@ public class GestureAnalyser {
         }
         return 0;
     }
-    
-    private double initialFingDist (int fingNum1, int fingNum2) {
 
-        return Math.sqrt(Math.pow((initialX[fingNum1]-initialX[fingNum2]), 2)
-                + Math.pow((initialY[fingNum1]-initialY[fingNum2]), 2));
+    private double initialFingDist(int fingNum1, int fingNum2) {
+
+        return Math.sqrt(Math.pow((initialX[fingNum1] - initialX[fingNum2]), 2)
+                + Math.pow((initialY[fingNum1] - initialY[fingNum2]), 2));
     }
 
-    private double finalFingDist (int fingNum1, int fingNum2) {
+    private double finalFingDist(int fingNum1, int fingNum2) {
 
-        return Math.sqrt(Math.pow((finalX[fingNum1]-finalX[fingNum2]), 2)
-                + Math.pow((finalY[fingNum1]-finalY[fingNum2]), 2));
+        return Math.sqrt(Math.pow((finalX[fingNum1] - finalX[fingNum2]), 2)
+                + Math.pow((finalY[fingNum1] - finalY[fingNum2]), 2));
+    }
+
+    public class GestureType {
+        private int gestureFlag;
+        private long gestureDuration;
+
+
+        public long getGestureDuration() {
+            return gestureDuration;
+        }
+
+        public void setGestureDuration(long gestureDuration) {
+            this.gestureDuration = gestureDuration;
+        }
+
+
+        public int getGestureFlag() {
+            return gestureFlag;
+        }
+
+        public void setGestureFlag(int gestureFlag) {
+            this.gestureFlag = gestureFlag;
+        }
+
+
     }
 
 
