@@ -12,6 +12,7 @@ import android.view.View;
 public class SimpleFingerGestures implements View.OnTouchListener {
 
     public static final boolean DEBUG = true;
+    public static final boolean CONSUME_TOUCH_EVENTS = false;
     // Will see if these need to be used. For now just returning duration in milliS
     public static final long GESTURE_SPEED_SLOW = 1500;
     public static final long GESTURE_SPEED_MEDIUM = 1000;
@@ -67,7 +68,7 @@ public class SimpleFingerGestures implements View.OnTouchListener {
                 if (DEBUG) Log.d(TAG, "ACTION_DOWN");
                 startTracking(0);
                 ga.trackGesture(ev);
-                return true;
+                return CONSUME_TOUCH_EVENTS;
             case MotionEvent.ACTION_UP:
                 if (DEBUG) Log.d(TAG, "ACTION_UP");
                 if (tracking[0]) {
@@ -75,12 +76,12 @@ public class SimpleFingerGestures implements View.OnTouchListener {
                 }
                 stopTracking(0);
                 ga.untrackGesture();
-                return true;
+                return CONSUME_TOUCH_EVENTS;
             case MotionEvent.ACTION_POINTER_DOWN:
                 if (DEBUG) Log.d(TAG, "ACTION_POINTER_DOWN" + " " + "num" + ev.getPointerCount());
                 startTracking(ev.getPointerCount() - 1);
                 ga.trackGesture(ev);
-                return true;
+                return CONSUME_TOUCH_EVENTS;
             case MotionEvent.ACTION_POINTER_UP:
                 if (DEBUG) Log.d(TAG, "ACTION_POINTER_UP" + " " + "num" + ev.getPointerCount());
                 if (tracking[1]) {
@@ -88,15 +89,15 @@ public class SimpleFingerGestures implements View.OnTouchListener {
                 }
                 stopTracking(ev.getPointerCount() - 1);
                 ga.untrackGesture();
-                return true;
+                return CONSUME_TOUCH_EVENTS;
             case MotionEvent.ACTION_CANCEL:
                 if (DEBUG) Log.d(TAG, "ACTION_CANCEL");
                 return true;
             case MotionEvent.ACTION_MOVE:
                 if (DEBUG) Log.d(TAG, "ACTION_MOVE");
-                return true;
+                return CONSUME_TOUCH_EVENTS;
         }
-        return false;
+        return CONSUME_TOUCH_EVENTS;
     }
 
     private void doCallBack(GestureAnalyser.GestureType mGt) {
