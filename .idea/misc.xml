@@ -120,6 +120,7 @@
         </lookup-objects>
         <force-database-load value="false" />
         <prompt-connection-selection value="true" />
+        <prompt-schema-selection value="true" />
       </lookup-filters>
     </navigation-settings>
     <dataset-editor-settings>
@@ -160,7 +161,6 @@
           <content-type name="PL/SQL" enabled="true" />
           <content-type name="JPA QL" enabled="true" />
           <content-type name="JavaScript" enabled="true" />
-          <content-type name="PHP" enabled="true" />
           <content-type name="JSP" enabled="true" />
           <content-type name="JSPx" enabled="true" />
           <content-type name="Groovy" enabled="true" />
@@ -168,7 +168,6 @@
           <content-type name="AIDL" enabled="true" />
           <content-type name="YAML" enabled="true" />
           <content-type name="Flex" enabled="true" />
-          <content-type name="Bash" enabled="true" />
           <content-type name="Manifest" enabled="true" />
         </content-types>
       </qualified-text-editor>
@@ -351,6 +350,11 @@
         <create-ddl-files value="false" />
       </general>
     </ddl-file-settings>
+  </component>
+  <component name="EclipseCodeFormatter">
+    <option name="defaultSettings" value="true" />
+    <option name="id" value="1401770753104" />
+    <option name="name" value="default" />
   </component>
   <component name="EntryPointsManager">
     <entry_points version="2.0" />
