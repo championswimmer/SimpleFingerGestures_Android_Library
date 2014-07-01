@@ -11,8 +11,8 @@ import android.view.View;
  */
 public class SimpleFingerGestures implements View.OnTouchListener {
 
-    public static final boolean DEBUG = true;
-    public static final boolean CONSUME_TOUCH_EVENTS = false;
+    public static boolean DEBUG = true;
+    public static boolean CONSUME_TOUCH_EVENTS = false;
     // Will see if these need to be used. For now just returning duration in milliS
     public static final long GESTURE_SPEED_SLOW = 1500;
     public static final long GESTURE_SPEED_MEDIUM = 1000;

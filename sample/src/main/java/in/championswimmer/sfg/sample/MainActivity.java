@@ -20,6 +20,10 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
         ImageView mv = (ImageView) findViewById(R.id.myview);
 
+        SimpleFingerGestures.DEBUG = true;
+        SimpleFingerGestures.CONSUME_TOUCH_EVENTS = true;
+
+
         SimpleFingerGestures sfg = new SimpleFingerGestures();
         sfg.setOn1FingerGestureListener(new SimpleFingerGestures.On1FingerGestureListener() {
             @Override
