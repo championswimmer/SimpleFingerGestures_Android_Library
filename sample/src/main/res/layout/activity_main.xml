@@ -10,4 +10,14 @@
         android:background="@android:color/holo_blue_bright"
         android:id="@+id/myview"/>
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text=""
+        android:id="@+id/gestureResultTextView"
+        android:textColor="@android:color/holo_red_light"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true" />
+
 </RelativeLayout>

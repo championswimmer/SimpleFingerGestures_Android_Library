@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 import in.championswimmer.sfg.lib.SimpleFingerGestures;
 
@@ -19,6 +20,7 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ImageView mv = (ImageView) findViewById(R.id.myview);
+        final TextView grtv = (TextView) findViewById(R.id.gestureResultTextView);
 
         SimpleFingerGestures.DEBUG = true;
         SimpleFingerGestures.CONSUME_TOUCH_EVENTS = true;
@@ -28,25 +30,25 @@ public class MainActivity extends Activity {
         sfg.setOn1FingerGestureListener(new SimpleFingerGestures.On1FingerGestureListener() {
             @Override
             public boolean onSwipeUp(long gestureDuration) {
-                Toast.makeText(getBaseContext(), "swiped up", Toast.LENGTH_SHORT).show();
+                grtv.setText("swiped up");
                 return false;
             }
 
             @Override
             public boolean onSwipeDown(long gestureDuration) {
-                Toast.makeText(getBaseContext(), "swiped down", Toast.LENGTH_SHORT).show();
+                grtv.setText("swiped down");
                 return false;
             }
 
             @Override
             public boolean onSwipeLeft(long gestureDuration) {
-                Toast.makeText(getBaseContext(), "swiped left", Toast.LENGTH_SHORT).show();
+                grtv.setText("swiped left");
                 return false;
             }
 
             @Override
             public boolean onSwipeRight(long gestureDuration) {
-                Toast.makeText(getBaseContext(), "swiped right", Toast.LENGTH_SHORT).show();
+                grtv.setText("swiped right");
                 return false;
             }
         });
@@ -54,37 +56,37 @@ public class MainActivity extends Activity {
         sfg.setOnMultiFingerGestureListener(new SimpleFingerGestures.OnMultiFingerGestureListener() {
             @Override
             public boolean onSwipeUp(int fingers, long gestureDuration) {
-                Toast.makeText(getBaseContext(), "swiped " + fingers + " up", Toast.LENGTH_SHORT).show();
+                grtv.setText("swiped " + fingers + " up");
                 return false;
             }
 
             @Override
             public boolean onSwipeDown(int fingers, long gestureDuration) {
-                Toast.makeText(getBaseContext(), "swiped " + fingers + " down", Toast.LENGTH_SHORT).show();
+                grtv.setText("swiped " + fingers + " down");
                 return false;
             }
 
             @Override
             public boolean onSwipeLeft(int fingers, long gestureDuration) {
-                Toast.makeText(getBaseContext(), "swiped " + fingers + " left", Toast.LENGTH_SHORT).show();
+                grtv.setText("swiped " + fingers + " left");
                 return false;
             }
 
             @Override
             public boolean onSwipeRight(int fingers, long gestureDuration) {
-                Toast.makeText(getBaseContext(), "swiped " + fingers + " right", Toast.LENGTH_SHORT).show();
+                grtv.setText("swiped " + fingers + " right");
                 return false;
             }
 
             @Override
             public boolean onPinch(int fingers, long gestureDuration) {
-                Toast.makeText(getBaseContext(), "pinch", Toast.LENGTH_SHORT).show();
+                grtv.setText("pinch");
                 return false;
             }
 
             @Override
             public boolean onUnpinch(int fingers, long gestureDuration) {
-                Toast.makeText(getBaseContext(), "unpinch", Toast.LENGTH_SHORT).show();
+                grtv.setText("unpinch");
                 return false;
             }
         });
