@@ -1,6 +1,8 @@
 # SimpleFingerGestures 
  An android library to implement simple 1 or 2 finger gestures easily
 
+[![Build Status](https://travis-ci.org/championswimmer/SimpleFingerGestures_Android_Library.svg)](https://travis-ci.org/championswimmer/SimpleFingerGestures_Android_Library)
+
 ## Library
  The library is inside the <a href="./libSFG">libSFG</a> folder
 
