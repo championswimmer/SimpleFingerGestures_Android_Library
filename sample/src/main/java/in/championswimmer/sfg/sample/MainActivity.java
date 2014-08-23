@@ -6,7 +6,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
+
 import in.championswimmer.sfg.lib.SimpleFingerGestures;
 
 
@@ -27,33 +27,8 @@ public class MainActivity extends Activity {
 
 
         SimpleFingerGestures sfg = new SimpleFingerGestures();
-        sfg.setOn1FingerGestureListener(new SimpleFingerGestures.On1FingerGestureListener() {
-            @Override
-            public boolean onSwipeUp(long gestureDuration) {
-                grtv.setText("swiped up");
-                return false;
-            }
 
-            @Override
-            public boolean onSwipeDown(long gestureDuration) {
-                grtv.setText("swiped down");
-                return false;
-            }
-
-            @Override
-            public boolean onSwipeLeft(long gestureDuration) {
-                grtv.setText("swiped left");
-                return false;
-            }
-
-            @Override
-            public boolean onSwipeRight(long gestureDuration) {
-                grtv.setText("swiped right");
-                return false;
-            }
-        });
-
-        sfg.setOnMultiFingerGestureListener(new SimpleFingerGestures.OnMultiFingerGestureListener() {
+        sfg.setOnFingerGestureListener(new SimpleFingerGestures.OnFingerGestureListener() {
             @Override
             public boolean onSwipeUp(int fingers, long gestureDuration) {
                 grtv.setText("swiped " + fingers + " up");

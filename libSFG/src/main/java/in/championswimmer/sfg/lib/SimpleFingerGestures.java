@@ -20,8 +20,7 @@ public class SimpleFingerGestures implements View.OnTouchListener {
     private static final String TAG = "SimpleFingerGestures";
     protected boolean tracking[] = {false, false, false, false, false};
     private GestureAnalyser ga;
-    private On1FingerGestureListener on1FingerGestureListener;
-    private OnMultiFingerGestureListener onMultiFingerGestureListener;
+    private OnFingerGestureListener onFingerGestureListener;
 
 
     /**
@@ -31,32 +30,19 @@ public class SimpleFingerGestures implements View.OnTouchListener {
         ga = new GestureAnalyser();
     }
 
-    /**
-     * Register a callback to be invoked when 1-finger gestures take place
-     * <p/>
-     * <br></br>
-     * <p>
-     * For the callbacks implemented via this, check the interface {@link in.championswimmer.sfg.lib.SimpleFingerGestures.On1FingerGestureListener}
-     * </p>
-     *
-     * @param o1fgl The callback that will run
-     */
-    public void setOn1FingerGestureListener(On1FingerGestureListener o1fgl) {
-        on1FingerGestureListener = o1fgl;
-    }
 
     /**
      * Register a callback to be invoked when multi-finger gestures take place
      * <p/>
      * <br></br>
      * <p>
-     * For the callbacks implemented via this, check the interface {@link in.championswimmer.sfg.lib.SimpleFingerGestures.OnMultiFingerGestureListener}
+     * For the callbacks implemented via this, check the interface {@link in.championswimmer.sfg.lib.SimpleFingerGestures.OnFingerGestureListener}
      * </p>
      *
      * @param omfgl The callback that will run
      */
-    public void setOnMultiFingerGestureListener(OnMultiFingerGestureListener omfgl) {
-        onMultiFingerGestureListener = omfgl;
+    public void setOnFingerGestureListener(OnFingerGestureListener omfgl) {
+        onFingerGestureListener = omfgl;
     }
 
 
@@ -103,61 +89,61 @@ public class SimpleFingerGestures implements View.OnTouchListener {
     private void doCallBack(GestureAnalyser.GestureType mGt) {
         switch (mGt.getGestureFlag()) {
             case GestureAnalyser.SWIPE_1_UP:
-                on1FingerGestureListener.onSwipeUp(mGt.getGestureDuration());
+                onFingerGestureListener.onSwipeUp(1, mGt.getGestureDuration());
                 break;
             case GestureAnalyser.SWIPE_1_DOWN:
-                on1FingerGestureListener.onSwipeDown(mGt.getGestureDuration());
+                onFingerGestureListener.onSwipeDown(1, mGt.getGestureDuration());
                 break;
             case GestureAnalyser.SWIPE_1_LEFT:
-                on1FingerGestureListener.onSwipeLeft(mGt.getGestureDuration());
+                onFingerGestureListener.onSwipeLeft(1, mGt.getGestureDuration());
                 break;
             case GestureAnalyser.SWIPE_1_RIGHT:
-                on1FingerGestureListener.onSwipeRight(mGt.getGestureDuration());
+                onFingerGestureListener.onSwipeRight(1, mGt.getGestureDuration());
                 break;
 
             case GestureAnalyser.SWIPE_2_UP:
-                onMultiFingerGestureListener.onSwipeUp(2, mGt.getGestureDuration());
+                onFingerGestureListener.onSwipeUp(2, mGt.getGestureDuration());
                 break;
             case GestureAnalyser.SWIPE_2_DOWN:
-                onMultiFingerGestureListener.onSwipeDown(2, mGt.getGestureDuration());
+                onFingerGestureListener.onSwipeDown(2, mGt.getGestureDuration());
                 break;
             case GestureAnalyser.SWIPE_2_LEFT:
-                onMultiFingerGestureListener.onSwipeLeft(2, mGt.getGestureDuration());
+                onFingerGestureListener.onSwipeLeft(2, mGt.getGestureDuration());
                 break;
             case GestureAnalyser.SWIPE_2_RIGHT:
-                onMultiFingerGestureListener.onSwipeRight(2, mGt.getGestureDuration());
+                onFingerGestureListener.onSwipeRight(2, mGt.getGestureDuration());
                 break;
             case GestureAnalyser.PINCH:
-                onMultiFingerGestureListener.onPinch(2, mGt.getGestureDuration());
+                onFingerGestureListener.onPinch(2, mGt.getGestureDuration());
                 break;
             case GestureAnalyser.UNPINCH:
-                onMultiFingerGestureListener.onUnpinch(2, mGt.getGestureDuration());
+                onFingerGestureListener.onUnpinch(2, mGt.getGestureDuration());
                 break;
 
             case GestureAnalyser.SWIPE_3_UP:
-                onMultiFingerGestureListener.onSwipeUp(3, mGt.getGestureDuration());
+                onFingerGestureListener.onSwipeUp(3, mGt.getGestureDuration());
                 break;
             case GestureAnalyser.SWIPE_3_DOWN:
-                onMultiFingerGestureListener.onSwipeDown(3, mGt.getGestureDuration());
+                onFingerGestureListener.onSwipeDown(3, mGt.getGestureDuration());
                 break;
             case GestureAnalyser.SWIPE_3_LEFT:
-                onMultiFingerGestureListener.onSwipeLeft(3, mGt.getGestureDuration());
+                onFingerGestureListener.onSwipeLeft(3, mGt.getGestureDuration());
                 break;
             case GestureAnalyser.SWIPE_3_RIGHT:
-                onMultiFingerGestureListener.onSwipeRight(3, mGt.getGestureDuration());
+                onFingerGestureListener.onSwipeRight(3, mGt.getGestureDuration());
                 break;
 
             case GestureAnalyser.SWIPE_4_UP:
-                onMultiFingerGestureListener.onSwipeUp(4, mGt.getGestureDuration());
+                onFingerGestureListener.onSwipeUp(4, mGt.getGestureDuration());
                 break;
             case GestureAnalyser.SWIPE_4_DOWN:
-                onMultiFingerGestureListener.onSwipeDown(4, mGt.getGestureDuration());
+                onFingerGestureListener.onSwipeDown(4, mGt.getGestureDuration());
                 break;
             case GestureAnalyser.SWIPE_4_LEFT:
-                onMultiFingerGestureListener.onSwipeLeft(4, mGt.getGestureDuration());
+                onFingerGestureListener.onSwipeLeft(4, mGt.getGestureDuration());
                 break;
             case GestureAnalyser.SWIPE_4_RIGHT:
-                onMultiFingerGestureListener.onSwipeRight(4, mGt.getGestureDuration());
+                onFingerGestureListener.onSwipeRight(4, mGt.getGestureDuration());
                 break;
         }
     }
@@ -176,47 +162,9 @@ public class SimpleFingerGestures implements View.OnTouchListener {
 
 
     /**
-     * Interface definition for the callback to be invoked when 1-finger gestures are performed
-     */
-    public interface On1FingerGestureListener {
-        /**
-         * Called when user swipes <b>up</b> with one finger
-         *
-         * @param gestureDuration
-         * @return
-         */
-        public boolean onSwipeUp(long gestureDuration);
-
-        /**
-         * Called when user swipes <b>down</b> with one finger
-         *
-         * @param gestureDuration
-         * @return
-         */
-        public boolean onSwipeDown(long gestureDuration);
-
-        /**
-         * Called when user swipes <b>left</b> with one finger
-         *
-         * @param gestureDuration
-         * @return
-         */
-        public boolean onSwipeLeft(long gestureDuration);
-
-        /**
-         * Called when user swipes <b>right</b> with one finger
-         *
-         * @param gestureDuration
-         * @return
-         */
-        public boolean onSwipeRight(long gestureDuration);
-
-    }
-
-    /**
      * Interface definition for the callback to be invoked when 2-finger gestures are performed
      */
-    public interface OnMultiFingerGestureListener {
+    public interface OnFingerGestureListener {
 
         /**
          * Called when user swipes <b>up</b> with two fingers

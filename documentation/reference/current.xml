@@ -506,7 +506,7 @@
  deprecated="not deprecated"
  visibility="public"
 >
-<parameter name="omfgl" type="in.championswimmer.sfg.lib.SimpleFingerGestures.OnMultiFingerGestureListener">
+<parameter name="omfgl" type="in.championswimmer.sfg.lib.SimpleFingerGestures.OnFingerGestureListener">
 </parameter>
 </method>
 <field name="DEBUG"
