@@ -19,28 +19,40 @@
 
  2. Implement the required gestures via this object
 
-        mySfg.setOn1FingerGestureListener(new SimpleFingerGestures.On1FingerGestureListener() {
+        sfg.setOnFingerGestureListener(new SimpleFingerGestures.OnFingerGestureListener() {
                     @Override
-                    public boolean onSwipeUp() {
-                        Toast.makeText(getBaseContext(), "swiped up", Toast.LENGTH_SHORT).show();
+                    public boolean onSwipeUp(int fingers, long gestureDuration) {
+                        grtv.setText("swiped " + fingers + " up");
                         return false;
                     }
-
+        
                     @Override
-                    public boolean onSwipeDown() {
-                        Toast.makeText(getBaseContext(), "swiped down", Toast.LENGTH_SHORT).show();
+                    public boolean onSwipeDown(int fingers, long gestureDuration) {
+                        grtv.setText("swiped " + fingers + " down");
                         return false;
                     }
-
+        
                     @Override
-                    public boolean onSwipeLeft() {
-                        Toast.makeText(getBaseContext(), "swiped left", Toast.LENGTH_SHORT).show();
+                    public boolean onSwipeLeft(int fingers, long gestureDuration) {
+                        grtv.setText("swiped " + fingers + " left");
                         return false;
                     }
-
+        
                     @Override
-                    public boolean onSwipeRight() {
-                        Toast.makeText(getBaseContext(), "swiped right", Toast.LENGTH_SHORT).show();
+                    public boolean onSwipeRight(int fingers, long gestureDuration) {
+                        grtv.setText("swiped " + fingers + " right");
+                        return false;
+                    }
+        
+                    @Override
+                    public boolean onPinch(int fingers, long gestureDuration) {
+                        grtv.setText("pinch");
+                        return false;
+                    }
+        
+                    @Override
+                    public boolean onUnpinch(int fingers, long gestureDuration) {
+                        grtv.setText("unpinch");
                         return false;
                     }
                 });
