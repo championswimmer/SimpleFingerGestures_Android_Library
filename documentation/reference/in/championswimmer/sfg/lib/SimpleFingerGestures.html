@@ -52,7 +52,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 
-  <meta name="description" content="Javadoc API documentation for "Eventful"." />
+  <meta name="description" content="Javadoc API documentation for "SimpleFingerGestures"." />
 
 <link rel="shortcut icon" type="image/x-icon" href="../../../../favicon.ico" />
 <title>
@@ -60,7 +60,7 @@
   SimpleFingerGestures
 
 
-| "Eventful"
+| "SimpleFingerGestures"
 
 </title>
 <link href="../../../../../assets/doclava-developer-docs.css" rel="stylesheet" type="text/css" />
@@ -92,7 +92,7 @@
 <div id="header">
     <div id="headerLeft">
     
-      <span id="masthead-title">"Eventful"</span>
+      <span id="masthead-title">"SimpleFingerGestures"</span>
     
     </div>
     <div id="headerRight">
@@ -154,8 +154,7 @@
               
     <li><h2>Interfaces</h2>
       <ul>
-          <li class="api apilevel-"><a href="../../../../in/championswimmer/sfg/lib/SimpleFingerGestures.On1FingerGestureListener.html">SimpleFingerGestures.On1FingerGestureListener</a></li>
-          <li class="api apilevel-"><a href="../../../../in/championswimmer/sfg/lib/SimpleFingerGestures.OnMultiFingerGestureListener.html">SimpleFingerGestures.OnMultiFingerGestureListener</a></li>
+          <li class="api apilevel-"><a href="../../../../in/championswimmer/sfg/lib/SimpleFingerGestures.OnFingerGestureListener.html">SimpleFingerGestures.OnFingerGestureListener</a></li>
       </ul>
     </li>
               
@@ -359,20 +358,7 @@ Summary:
          
         
         interface</td>
-      <td class="jd-linkcol"><a href="../../../../in/championswimmer/sfg/lib/SimpleFingerGestures.On1FingerGestureListener.html">SimpleFingerGestures.On1FingerGestureListener</a></td>
-      <td class="jd-descrcol" width="100%">Interface definition for the callback to be invoked when 1-finger gestures are performed
-&nbsp;</td>
-    </tr>
-    
-    
-    <tr class=" api apilevel-" >
-      <td class="jd-typecol">
-        
-         
-         
-        
-        interface</td>
-      <td class="jd-linkcol"><a href="../../../../in/championswimmer/sfg/lib/SimpleFingerGestures.OnMultiFingerGestureListener.html">SimpleFingerGestures.OnMultiFingerGestureListener</a></td>
+      <td class="jd-linkcol"><a href="../../../../in/championswimmer/sfg/lib/SimpleFingerGestures.OnFingerGestureListener.html">SimpleFingerGestures.OnFingerGestureListener</a></td>
       <td class="jd-descrcol" width="100%">Interface definition for the callback to be invoked when 2-finger gestures are performed
 &nbsp;</td>
     </tr>
@@ -398,27 +384,20 @@ Summary:
 
     
     <tr class="alt-color api apilevel-" >
-        <td class="jd-typecol">boolean</td>
-        <td class="jd-linkcol"><a href="../../../../in/championswimmer/sfg/lib/SimpleFingerGestures.html#DEBUG">DEBUG</a></td>
-        <td class="jd-descrcol" width="100%"></td>
-    </tr>
-    
-    
-    <tr class=" api apilevel-" >
         <td class="jd-typecol">long</td>
         <td class="jd-linkcol"><a href="../../../../in/championswimmer/sfg/lib/SimpleFingerGestures.html#GESTURE_SPEED_FAST">GESTURE_SPEED_FAST</a></td>
         <td class="jd-descrcol" width="100%"></td>
     </tr>
     
     
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol">long</td>
         <td class="jd-linkcol"><a href="../../../../in/championswimmer/sfg/lib/SimpleFingerGestures.html#GESTURE_SPEED_MEDIUM">GESTURE_SPEED_MEDIUM</a></td>
         <td class="jd-descrcol" width="100%"></td>
     </tr>
     
     
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol">long</td>
         <td class="jd-linkcol"><a href="../../../../in/championswimmer/sfg/lib/SimpleFingerGestures.html#GESTURE_SPEED_SLOW">GESTURE_SPEED_SLOW</a></td>
         <td class="jd-descrcol" width="100%"></td>
@@ -438,6 +417,28 @@ Summary:
 <table id="lfields" class="jd-sumtable"><tr><th colspan="12">Fields</th></tr>
 
 
+    
+      <tr class="alt-color api apilevel-" >
+          <td class="jd-typecol">
+          public
+          static
+          
+          boolean</td>
+          <td class="jd-linkcol"><a href="../../../../in/championswimmer/sfg/lib/SimpleFingerGestures.html#CONSUME_TOUCH_EVENTS">CONSUME_TOUCH_EVENTS</a></td>
+          <td class="jd-descrcol" width="100%"></td>
+      </tr>
+      
+    
+      <tr class=" api apilevel-" >
+          <td class="jd-typecol">
+          public
+          static
+          
+          boolean</td>
+          <td class="jd-linkcol"><a href="../../../../in/championswimmer/sfg/lib/SimpleFingerGestures.html#DEBUG">DEBUG</a></td>
+          <td class="jd-descrcol" width="100%"></td>
+      </tr>
+      
     
       <tr class="alt-color api apilevel-" >
           <td class="jd-typecol">
@@ -523,36 +524,13 @@ Summary:
             void
         </td>
         <td class="jd-linkcol" width="100%">
-        <span class="sympad"><a href="../../../../in/championswimmer/sfg/lib/SimpleFingerGestures.html#setOn1FingerGestureListener(in.championswimmer.sfg.lib.SimpleFingerGestures.On1FingerGestureListener)">setOn1FingerGestureListener</a></span>(<a href="../../../../in/championswimmer/sfg/lib/SimpleFingerGestures.On1FingerGestureListener.html">SimpleFingerGestures.On1FingerGestureListener</a> o1fgl)
-        
-        <div class="jd-descrdiv">Register a callback to be invoked when 1-finger gestures take place
- <p/>
- <br></br>
- <p>
- For the callbacks implemented via this, check the interface <code><a href="../../../../in/championswimmer/sfg/lib/SimpleFingerGestures.On1FingerGestureListener.html">SimpleFingerGestures.On1FingerGestureListener</a></code>
- </p></div>
-  
-  </td></tr>
-
-
-	 
-    <tr class="alt-color api apilevel-" >
-        <td class="jd-typecol">
-            
-            
-            
-            
-            
-            void
-        </td>
-        <td class="jd-linkcol" width="100%">
-        <span class="sympad"><a href="../../../../in/championswimmer/sfg/lib/SimpleFingerGestures.html#setOnMultiFingerGestureListener(in.championswimmer.sfg.lib.SimpleFingerGestures.OnFingerGestureListener)">setOnMultiFingerGestureListener</a></span>(<a href="../../../../in/championswimmer/sfg/lib/SimpleFingerGestures.OnMultiFingerGestureListener.html">SimpleFingerGestures.OnMultiFingerGestureListener</a> omfgl)
+        <span class="sympad"><a href="../../../../in/championswimmer/sfg/lib/SimpleFingerGestures.html#setOnFingerGestureListener(in.championswimmer.sfg.lib.SimpleFingerGestures.OnFingerGestureListener)">setOnFingerGestureListener</a></span>(<a href="../../../../in/championswimmer/sfg/lib/SimpleFingerGestures.OnFingerGestureListener.html">SimpleFingerGestures.OnFingerGestureListener</a> omfgl)
         
         <div class="jd-descrdiv">Register a callback to be invoked when multi-finger gestures take place
  <p/>
  <br></br>
  <p>
- For the callbacks implemented via this, check the interface <code><a href="../../../../in/championswimmer/sfg/lib/SimpleFingerGestures.OnMultiFingerGestureListener.html">SimpleFingerGestures.OnMultiFingerGestureListener</a></code>
+ For the callbacks implemented via this, check the interface <code><a href="../../../../in/championswimmer/sfg/lib/SimpleFingerGestures.OnFingerGestureListener.html">SimpleFingerGestures.OnFingerGestureListener</a></code>
  </p></div>
   
   </td></tr>
@@ -803,45 +781,6 @@ From class
 
 
 
-<a id="DEBUG"></a>
-
-<div class="jd-details api apilevel-"> 
-    <h4 class="jd-details-title">
-      <span class="normal">
-        public 
-        static 
-        final 
-        boolean
-      </span>
-        DEBUG
-    </h4>
-      <div class="api-level">
-        
-
-
-        
-  
-
-      </div>
-    <div class="jd-details-descr">
-      
-  <div class="jd-tagdata jd-tagdescr"><p></p></div>
-
-    
-        <div class="jd-tagdata">
-        <span class="jd-tagtitle">Constant Value: </span>
-        <span>
-            
-                true
-            
-        </span>
-        </div>
-    
-    </div>
-</div>
-
-
-
 <a id="GESTURE_SPEED_FAST"></a>
 
 <div class="jd-details api apilevel-"> 
@@ -972,6 +911,66 @@ From class
 
 
 
+<a id="CONSUME_TOUCH_EVENTS"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+         
+        boolean
+      </span>
+        CONSUME_TOUCH_EVENTS
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<a id="DEBUG"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+         
+        boolean
+      </span>
+        DEBUG
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
 <a id="tracking"></a>
 
 <div class="jd-details api apilevel-"> 
@@ -1089,7 +1088,7 @@ From class
 </div>
 
 
-<a id="setOn1FingerGestureListener(in.championswimmer.sfg.lib.SimpleFingerGestures.On1FingerGestureListener)"></a>
+<a id="setOnFingerGestureListener(in.championswimmer.sfg.lib.SimpleFingerGestures.OnFingerGestureListener)"></a>
 
 <div class="jd-details api apilevel-"> 
     <h4 class="jd-details-title">
@@ -1101,54 +1100,8 @@ From class
          
         void
       </span>
-      <span class="sympad">setOn1FingerGestureListener</span>
-      <span class="normal">(<a href="../../../../in/championswimmer/sfg/lib/SimpleFingerGestures.On1FingerGestureListener.html">SimpleFingerGestures.On1FingerGestureListener</a> o1fgl)</span>
-    </h4>
-      <div class="api-level">
-        <div>
-
-</div>
-        
-  
-
-      </div>
-    <div class="jd-details-descr">
-      
-  <div class="jd-tagdata jd-tagdescr"><p>Register a callback to be invoked when 1-finger gestures take place
- <p/>
- <br></br>
- <p>
- For the callbacks implemented via this, check the interface <code><a href="../../../../in/championswimmer/sfg/lib/SimpleFingerGestures.On1FingerGestureListener.html">SimpleFingerGestures.On1FingerGestureListener</a></code>
- </p></p></div>
-  <div class="jd-tagdata">
-      <h5 class="jd-tagtitle">Parameters</h5>
-      <table class="jd-tagtable">
-        <tr>
-          <th>o1fgl</th>
-          <td>The callback that will run
-</td>
-        </tr>
-      </table>
-  </div>
-
-    </div>
-</div>
-
-
-<a id="setOnMultiFingerGestureListener(in.championswimmer.sfg.lib.SimpleFingerGestures.OnFingerGestureListener)"></a>
-
-<div class="jd-details api apilevel-"> 
-    <h4 class="jd-details-title">
-      <span class="normal">
-        public 
-         
-         
-         
-         
-        void
-      </span>
-      <span class="sympad">setOnMultiFingerGestureListener</span>
-      <span class="normal">(<a href="../../../../in/championswimmer/sfg/lib/SimpleFingerGestures.OnMultiFingerGestureListener.html">SimpleFingerGestures.OnMultiFingerGestureListener</a> omfgl)</span>
+      <span class="sympad">setOnFingerGestureListener</span>
+      <span class="normal">(<a href="../../../../in/championswimmer/sfg/lib/SimpleFingerGestures.OnFingerGestureListener.html">SimpleFingerGestures.OnFingerGestureListener</a> omfgl)</span>
     </h4>
       <div class="api-level">
         <div>
@@ -1164,7 +1117,7 @@ From class
  <p/>
  <br></br>
  <p>
- For the callbacks implemented via this, check the interface <code><a href="../../../../in/championswimmer/sfg/lib/SimpleFingerGestures.OnMultiFingerGestureListener.html">SimpleFingerGestures.OnMultiFingerGestureListener</a></code>
+ For the callbacks implemented via this, check the interface <code><a href="../../../../in/championswimmer/sfg/lib/SimpleFingerGestures.OnFingerGestureListener.html">SimpleFingerGestures.OnFingerGestureListener</a></code>
  </p></p></div>
   <div class="jd-tagdata">
       <h5 class="jd-tagtitle">Parameters</h5>

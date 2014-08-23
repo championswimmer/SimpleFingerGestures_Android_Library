@@ -52,15 +52,15 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 
-  <meta name="description" content="Javadoc API documentation for "Eventful"." />
+  <meta name="description" content="Javadoc API documentation for "SimpleFingerGestures"." />
 
 <link rel="shortcut icon" type="image/x-icon" href="../../../../favicon.ico" />
 <title>
 
-  SimpleFingerGestures.On1FingerGestureListener
+  SimpleFingerGestures.OnFingerGestureListener
 
 
-| "Eventful"
+| "SimpleFingerGestures"
 
 </title>
 <link href="../../../../../assets/doclava-developer-docs.css" rel="stylesheet" type="text/css" />
@@ -92,7 +92,7 @@
 <div id="header">
     <div id="headerLeft">
     
-      <span id="masthead-title">"Eventful"</span>
+      <span id="masthead-title">"SimpleFingerGestures"</span>
     
     </div>
     <div id="headerRight">
@@ -154,8 +154,7 @@
               
     <li><h2>Interfaces</h2>
       <ul>
-          <li class="selected api apilevel-"><a href="../../../../in/championswimmer/sfg/lib/SimpleFingerGestures.On1FingerGestureListener.html">SimpleFingerGestures.On1FingerGestureListener</a></li>
-          <li class="api apilevel-"><a href="../../../../in/championswimmer/sfg/lib/SimpleFingerGestures.OnMultiFingerGestureListener.html">SimpleFingerGestures.OnMultiFingerGestureListener</a></li>
+          <li class="selected api apilevel-"><a href="../../../../in/championswimmer/sfg/lib/SimpleFingerGestures.OnFingerGestureListener.html">SimpleFingerGestures.OnFingerGestureListener</a></li>
       </ul>
     </li>
               
@@ -231,7 +230,7 @@
      
     
     interface
-<h1>SimpleFingerGestures.On1FingerGestureListener</h1>
+<h1>SimpleFingerGestures.OnFingerGestureListener</h1>
 
 
 
@@ -250,7 +249,7 @@
 
     <tr>
          	
-        <td colspan="1" class="jd-inheritance-class-cell">in.championswimmer.sfg.lib.SimpleFingerGestures.On1FingerGestureListener</td>
+        <td colspan="1" class="jd-inheritance-class-cell">in.championswimmer.sfg.lib.SimpleFingerGestures.OnFingerGestureListener</td>
     </tr>
     
 
@@ -266,7 +265,7 @@
 
 
 <h2>Class Overview</h2>
-<p>Interface definition for the callback to be invoked when 1-finger gestures are performed
+<p>Interface definition for the callback to be invoked when 2-finger gestures are performed
 </p>
 
 
@@ -337,9 +336,9 @@
             boolean
         </td>
         <td class="jd-linkcol" width="100%">
-        <span class="sympad"><a href="../../../../in/championswimmer/sfg/lib/SimpleFingerGestures.On1FingerGestureListener.html#onSwipeDown(long)">onSwipeDown</a></span>(long gestureDuration)
+        <span class="sympad"><a href="../../../../in/championswimmer/sfg/lib/SimpleFingerGestures.OnFingerGestureListener.html#onPinch(int, long)">onPinch</a></span>(int fingers, long gestureDuration)
         
-        <div class="jd-descrdiv">Called when user swipes <b>down</b> with one finger</div>
+        <div class="jd-descrdiv">Called when user <b>pinches</b> with two fingers (bring together)</div>
   
   </td></tr>
 
@@ -355,9 +354,9 @@
             boolean
         </td>
         <td class="jd-linkcol" width="100%">
-        <span class="sympad"><a href="../../../../in/championswimmer/sfg/lib/SimpleFingerGestures.On1FingerGestureListener.html#onSwipeLeft(long)">onSwipeLeft</a></span>(long gestureDuration)
+        <span class="sympad"><a href="../../../../in/championswimmer/sfg/lib/SimpleFingerGestures.OnFingerGestureListener.html#onSwipeDown(int, long)">onSwipeDown</a></span>(int fingers, long gestureDuration)
         
-        <div class="jd-descrdiv">Called when user swipes <b>left</b> with one finger</div>
+        <div class="jd-descrdiv">Called when user swipes <b>down</b> with two fingers</div>
   
   </td></tr>
 
@@ -373,9 +372,9 @@
             boolean
         </td>
         <td class="jd-linkcol" width="100%">
-        <span class="sympad"><a href="../../../../in/championswimmer/sfg/lib/SimpleFingerGestures.On1FingerGestureListener.html#onSwipeRight(long)">onSwipeRight</a></span>(long gestureDuration)
+        <span class="sympad"><a href="../../../../in/championswimmer/sfg/lib/SimpleFingerGestures.OnFingerGestureListener.html#onSwipeLeft(int, long)">onSwipeLeft</a></span>(int fingers, long gestureDuration)
         
-        <div class="jd-descrdiv">Called when user swipes <b>right</b> with one finger</div>
+        <div class="jd-descrdiv">Called when user swipes <b>left</b> with two fingers</div>
   
   </td></tr>
 
@@ -391,9 +390,45 @@
             boolean
         </td>
         <td class="jd-linkcol" width="100%">
-        <span class="sympad"><a href="../../../../in/championswimmer/sfg/lib/SimpleFingerGestures.On1FingerGestureListener.html#onSwipeUp(long)">onSwipeUp</a></span>(long gestureDuration)
+        <span class="sympad"><a href="../../../../in/championswimmer/sfg/lib/SimpleFingerGestures.OnFingerGestureListener.html#onSwipeRight(int, long)">onSwipeRight</a></span>(int fingers, long gestureDuration)
         
-        <div class="jd-descrdiv">Called when user swipes <b>up</b> with one finger</div>
+        <div class="jd-descrdiv">Called when user swipes <b>right</b> with two fingers</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol">
+            abstract
+            
+            
+            
+            
+            boolean
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../../in/championswimmer/sfg/lib/SimpleFingerGestures.OnFingerGestureListener.html#onSwipeUp(int, long)">onSwipeUp</a></span>(int fingers, long gestureDuration)
+        
+        <div class="jd-descrdiv">Called when user swipes <b>up</b> with two fingers</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol">
+            abstract
+            
+            
+            
+            
+            boolean
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../../in/championswimmer/sfg/lib/SimpleFingerGestures.OnFingerGestureListener.html#onUnpinch(int, long)">onUnpinch</a></span>(int fingers, long gestureDuration)
+        
+        <div class="jd-descrdiv">Called when user <b>un-pinches</b> with two fingers (take apart)</div>
   
   </td></tr>
 
@@ -446,7 +481,51 @@
 
 
 
-<a id="onSwipeDown(long)"></a>
+<a id="onPinch(int, long)"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+        abstract 
+         
+        boolean
+      </span>
+      <span class="sympad">onPinch</span>
+      <span class="normal">(int fingers, long gestureDuration)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Called when user <b>pinches</b> with two fingers (bring together)</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>fingers</th>
+          <td>number of fingers involved in this gesture</td>
+        </tr>
+        <tr>
+          <th>gestureDuration</th>
+          <td>duration in milliSeconds</td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<a id="onSwipeDown(int, long)"></a>
 
 <div class="jd-details api apilevel-"> 
     <h4 class="jd-details-title">
@@ -459,7 +538,7 @@
         boolean
       </span>
       <span class="sympad">onSwipeDown</span>
-      <span class="normal">(long gestureDuration)</span>
+      <span class="normal">(int fingers, long gestureDuration)</span>
     </h4>
       <div class="api-level">
         <div>
@@ -471,13 +550,26 @@
       </div>
     <div class="jd-details-descr">
       
-  <div class="jd-tagdata jd-tagdescr"><p>Called when user swipes <b>down</b> with one finger</p></div>
+  <div class="jd-tagdata jd-tagdescr"><p>Called when user swipes <b>down</b> with two fingers</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>fingers</th>
+          <td>number of fingers involved in this gesture</td>
+        </tr>
+        <tr>
+          <th>gestureDuration</th>
+          <td>duration in milliSeconds</td>
+        </tr>
+      </table>
+  </div>
 
     </div>
 </div>
 
 
-<a id="onSwipeLeft(long)"></a>
+<a id="onSwipeLeft(int, long)"></a>
 
 <div class="jd-details api apilevel-"> 
     <h4 class="jd-details-title">
@@ -490,7 +582,7 @@
         boolean
       </span>
       <span class="sympad">onSwipeLeft</span>
-      <span class="normal">(long gestureDuration)</span>
+      <span class="normal">(int fingers, long gestureDuration)</span>
     </h4>
       <div class="api-level">
         <div>
@@ -502,13 +594,26 @@
       </div>
     <div class="jd-details-descr">
       
-  <div class="jd-tagdata jd-tagdescr"><p>Called when user swipes <b>left</b> with one finger</p></div>
+  <div class="jd-tagdata jd-tagdescr"><p>Called when user swipes <b>left</b> with two fingers</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>fingers</th>
+          <td>number of fingers involved in this gesture</td>
+        </tr>
+        <tr>
+          <th>gestureDuration</th>
+          <td>duration in milliSeconds</td>
+        </tr>
+      </table>
+  </div>
 
     </div>
 </div>
 
 
-<a id="onSwipeRight(long)"></a>
+<a id="onSwipeRight(int, long)"></a>
 
 <div class="jd-details api apilevel-"> 
     <h4 class="jd-details-title">
@@ -521,7 +626,7 @@
         boolean
       </span>
       <span class="sympad">onSwipeRight</span>
-      <span class="normal">(long gestureDuration)</span>
+      <span class="normal">(int fingers, long gestureDuration)</span>
     </h4>
       <div class="api-level">
         <div>
@@ -533,13 +638,26 @@
       </div>
     <div class="jd-details-descr">
       
-  <div class="jd-tagdata jd-tagdescr"><p>Called when user swipes <b>right</b> with one finger</p></div>
+  <div class="jd-tagdata jd-tagdescr"><p>Called when user swipes <b>right</b> with two fingers</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>fingers</th>
+          <td>number of fingers involved in this gesture</td>
+        </tr>
+        <tr>
+          <th>gestureDuration</th>
+          <td>duration in milliSeconds</td>
+        </tr>
+      </table>
+  </div>
 
     </div>
 </div>
 
 
-<a id="onSwipeUp(long)"></a>
+<a id="onSwipeUp(int, long)"></a>
 
 <div class="jd-details api apilevel-"> 
     <h4 class="jd-details-title">
@@ -552,7 +670,7 @@
         boolean
       </span>
       <span class="sympad">onSwipeUp</span>
-      <span class="normal">(long gestureDuration)</span>
+      <span class="normal">(int fingers, long gestureDuration)</span>
     </h4>
       <div class="api-level">
         <div>
@@ -564,7 +682,64 @@
       </div>
     <div class="jd-details-descr">
       
-  <div class="jd-tagdata jd-tagdescr"><p>Called when user swipes <b>up</b> with one finger</p></div>
+  <div class="jd-tagdata jd-tagdescr"><p>Called when user swipes <b>up</b> with two fingers</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>fingers</th>
+          <td>number of fingers involved in this gesture</td>
+        </tr>
+        <tr>
+          <th>gestureDuration</th>
+          <td>duration in milliSeconds</td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<a id="onUnpinch(int, long)"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+        abstract 
+         
+        boolean
+      </span>
+      <span class="sympad">onUnpinch</span>
+      <span class="normal">(int fingers, long gestureDuration)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Called when user <b>un-pinches</b> with two fingers (take apart)</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>fingers</th>
+          <td>number of fingers involved in this gesture</td>
+        </tr>
+        <tr>
+          <th>gestureDuration</th>
+          <td>duration in milliSeconds</td>
+        </tr>
+      </table>
+  </div>
 
     </div>
 </div>

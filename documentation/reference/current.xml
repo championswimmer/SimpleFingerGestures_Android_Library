@@ -483,20 +483,7 @@
 <parameter name="ev" type="MotionEvent">
 </parameter>
 </method>
-<method name="setOn1FingerGestureListener"
- return="void"
- abstract="false"
- native="false"
- synchronized="false"
- static="false"
- final="false"
- deprecated="not deprecated"
- visibility="public"
->
-<parameter name="o1fgl" type="in.championswimmer.sfg.lib.SimpleFingerGestures.On1FingerGestureListener">
-</parameter>
-</method>
-<method name="setOnMultiFingerGestureListener"
+<method name="setOnFingerGestureListener"
  return="void"
  abstract="false"
  native="false"
@@ -509,13 +496,22 @@
 <parameter name="omfgl" type="in.championswimmer.sfg.lib.SimpleFingerGestures.OnFingerGestureListener">
 </parameter>
 </method>
+<field name="CONSUME_TOUCH_EVENTS"
+ type="boolean"
+ transient="false"
+ volatile="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
 <field name="DEBUG"
  type="boolean"
  transient="false"
  volatile="false"
- value="true"
  static="true"
- final="true"
+ final="false"
  deprecated="not deprecated"
  visibility="public"
 >
@@ -565,67 +561,7 @@
 >
 </field>
 </class>
-<interface name="SimpleFingerGestures.On1FingerGestureListener"
- abstract="true"
- static="true"
- final="false"
- deprecated="not deprecated"
- visibility="public"
->
-<method name="onSwipeDown"
- return="boolean"
- abstract="true"
- native="false"
- synchronized="false"
- static="false"
- final="false"
- deprecated="not deprecated"
- visibility="public"
->
-<parameter name="gestureDuration" type="long">
-</parameter>
-</method>
-<method name="onSwipeLeft"
- return="boolean"
- abstract="true"
- native="false"
- synchronized="false"
- static="false"
- final="false"
- deprecated="not deprecated"
- visibility="public"
->
-<parameter name="gestureDuration" type="long">
-</parameter>
-</method>
-<method name="onSwipeRight"
- return="boolean"
- abstract="true"
- native="false"
- synchronized="false"
- static="false"
- final="false"
- deprecated="not deprecated"
- visibility="public"
->
-<parameter name="gestureDuration" type="long">
-</parameter>
-</method>
-<method name="onSwipeUp"
- return="boolean"
- abstract="true"
- native="false"
- synchronized="false"
- static="false"
- final="false"
- deprecated="not deprecated"
- visibility="public"
->
-<parameter name="gestureDuration" type="long">
-</parameter>
-</method>
-</interface>
-<interface name="SimpleFingerGestures.OnMultiFingerGestureListener"
+<interface name="SimpleFingerGestures.OnFingerGestureListener"
  abstract="true"
  static="true"
  final="false"

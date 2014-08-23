@@ -18,7 +18,7 @@ EXTRA2=""
 ### doclet: doclava ###
 DOCLETPATH="-docletpath $HERE/javadoc/doclava.jar"
 DOCLET="-doclet com.google.doclava.Doclava"
-EXTRA1="-hdf project.name \"Eventful\" "
+EXTRA1="-hdf project.name \"SimpleFingerGestures\" "
 EXTRA2="-XDignore.symbol.file"
 
 ### doclet: apiviz ###
