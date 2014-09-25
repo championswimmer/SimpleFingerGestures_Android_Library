@@ -19,7 +19,7 @@
 
  2. Implement the required gestures via this object
 
-        sfg.setOnFingerGestureListener(new SimpleFingerGestures.OnFingerGestureListener() {
+        mySfg.setOnFingerGestureListener(new SimpleFingerGestures.OnFingerGestureListener() {
                     @Override
                     public boolean onSwipeUp(int fingers, long gestureDuration) {
                         grtv.setText("swiped " + fingers + " up");
