@@ -30,8 +30,12 @@ public class GestureAnalyser {
     public static final int SWIPE_4_DOWN = 42;
     public static final int SWIPE_4_LEFT = 43;
     public static final int SWIPE_4_RIGHT = 44;
-    public static final int PINCH = 25;
-    public static final int UNPINCH = 26;
+    public static final int PINCH_2 = 25;
+    public static final int UNPINCH_2 = 26;
+    public static final int PINCH_3 = 35;
+    public static final int UNPINCH_3 = 36;
+    public static final int PINCH_4 = 45;
+    public static final int UNPINCH_4 = 46;
     //Ongoing gesture flags
     public static final int SWIPING_1_UP = 101;
     public static final int SWIPING_1_DOWN = 102;
@@ -129,10 +133,10 @@ public class GestureAnalyser {
                 return SWIPE_2_RIGHT;
             }
             if (finalFingDist(0, 1) > 2 * (initialFingDist(0, 1))) {
-                return UNPINCH;
+                return UNPINCH_2;
             }
             if (finalFingDist(0, 1) < 0.5 * (initialFingDist(0, 1))) {
-                return PINCH;
+                return PINCH_2;
             }
         }
         if (numFingers == 3) {
@@ -156,14 +160,18 @@ public class GestureAnalyser {
                     && ((delX[2]) > (2 * Math.abs(delY[2])))) {
                 return SWIPE_3_RIGHT;
             }
-            /*
-            if (finalFingDist(0,1) > 2*(initialFingDist(0,1))) {
-                return UNPINCH;
+
+            if ((finalFingDist(0,1) > 1.75*(initialFingDist(0,1)))
+                    && (finalFingDist(1,2) > 1.75*(initialFingDist(1,2)))
+                    && (finalFingDist(2,0) > 1.75*(initialFingDist(2,0))) ) {
+                return UNPINCH_3;
             }
-            if (finalFingDist(0,1) < 0.5*(initialFingDist(0,1))) {
-                return PINCH;
+            if ((finalFingDist(0,1) < 0.66*(initialFingDist(0,1)))
+                    && (finalFingDist(1,2) < 0.66*(initialFingDist(1,2)))
+                    && (finalFingDist(2,0) < 0.66*(initialFingDist(2,0))) ) {
+                return PINCH_3;
             }
-            */
+
         }
         if (numFingers == 4) {
             if (((-delY[0]) > (2 * Math.abs(delX[0])))
@@ -190,14 +198,18 @@ public class GestureAnalyser {
                     && ((delX[3]) > (2 * Math.abs(delY[3])))) {
                 return SWIPE_4_RIGHT;
             }
-            /*
-            if (finalFingDist(0,1) > 2*(initialFingDist(0,1))) {
-                return UNPINCH;
+            if ((finalFingDist(0,1) > 1.5*(initialFingDist(0,1)))
+                    && (finalFingDist(1,2) > 1.5*(initialFingDist(1,2)))
+                    && (finalFingDist(2,3) > 1.5*(initialFingDist(2,3)))
+                    && (finalFingDist(3,0) > 1.5*(initialFingDist(3,0))) ) {
+                return UNPINCH_4;
             }
-            if (finalFingDist(0,1) < 0.5*(initialFingDist(0,1))) {
-                return PINCH;
+            if ((finalFingDist(0,1) < 0.8*(initialFingDist(0,1)))
+                    && (finalFingDist(1,2) < 0.8*(initialFingDist(1,2)))
+                    && (finalFingDist(2,3) < 0.8*(initialFingDist(2,3)))
+                    && (finalFingDist(3,0) < 0.8*(initialFingDist(3,0))) ) {
+                return PINCH_4;
             }
-            */
         }
         return 0;
     }

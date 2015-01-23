@@ -113,10 +113,10 @@ public class SimpleFingerGestures implements View.OnTouchListener {
             case GestureAnalyser.SWIPE_2_RIGHT:
                 onFingerGestureListener.onSwipeRight(2, mGt.getGestureDuration());
                 break;
-            case GestureAnalyser.PINCH:
+            case GestureAnalyser.PINCH_2:
                 onFingerGestureListener.onPinch(2, mGt.getGestureDuration());
                 break;
-            case GestureAnalyser.UNPINCH:
+            case GestureAnalyser.UNPINCH_2:
                 onFingerGestureListener.onUnpinch(2, mGt.getGestureDuration());
                 break;
 
@@ -132,6 +132,12 @@ public class SimpleFingerGestures implements View.OnTouchListener {
             case GestureAnalyser.SWIPE_3_RIGHT:
                 onFingerGestureListener.onSwipeRight(3, mGt.getGestureDuration());
                 break;
+            case GestureAnalyser.PINCH_3:
+                onFingerGestureListener.onPinch(3, mGt.getGestureDuration());
+                break;
+            case GestureAnalyser.UNPINCH_3:
+                onFingerGestureListener.onUnpinch(3, mGt.getGestureDuration());
+                break;
 
             case GestureAnalyser.SWIPE_4_UP:
                 onFingerGestureListener.onSwipeUp(4, mGt.getGestureDuration());
@@ -144,6 +150,12 @@ public class SimpleFingerGestures implements View.OnTouchListener {
                 break;
             case GestureAnalyser.SWIPE_4_RIGHT:
                 onFingerGestureListener.onSwipeRight(4, mGt.getGestureDuration());
+                break;
+            case GestureAnalyser.PINCH_4:
+                onFingerGestureListener.onPinch(4, mGt.getGestureDuration());
+                break;
+            case GestureAnalyser.UNPINCH_4:
+                onFingerGestureListener.onUnpinch(4, mGt.getGestureDuration());
                 break;
         }
     }
