@@ -2,8 +2,6 @@ package in.championswimmer.sfg.sample;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -22,46 +20,45 @@ public class MainActivity extends Activity {
         ImageView mv = (ImageView) findViewById(R.id.myview);
         final TextView grtv = (TextView) findViewById(R.id.gestureResultTextView);
 
-        SimpleFingerGestures.DEBUG = true;
-        SimpleFingerGestures.CONSUME_TOUCH_EVENTS = true;
-
 
         SimpleFingerGestures sfg = new SimpleFingerGestures();
+        sfg.setDebug(true);
+        sfg.setConsumeTouchEvents(true);
 
         sfg.setOnFingerGestureListener(new SimpleFingerGestures.OnFingerGestureListener() {
             @Override
             public boolean onSwipeUp(int fingers, long gestureDuration) {
-                grtv.setText("swiped " + fingers + " up");
+                grtv.setText("You swiped " + fingers + " fingers  up");
                 return false;
             }
 
             @Override
             public boolean onSwipeDown(int fingers, long gestureDuration) {
-                grtv.setText("swiped " + fingers + " down");
+                grtv.setText("You swiped " + fingers + " fingers  down");
                 return false;
             }
 
             @Override
             public boolean onSwipeLeft(int fingers, long gestureDuration) {
-                grtv.setText("swiped " + fingers + " left");
+                grtv.setText("You swiped " + fingers + " fingers  left");
                 return false;
             }
 
             @Override
             public boolean onSwipeRight(int fingers, long gestureDuration) {
-                grtv.setText("swiped " + fingers + " right");
+                grtv.setText("You swiped " + fingers + " fingers  right");
                 return false;
             }
 
             @Override
             public boolean onPinch(int fingers, long gestureDuration) {
-                grtv.setText("pinch " + fingers);
+                grtv.setText("You pinched " + fingers + " fingers");
                 return false;
             }
 
             @Override
             public boolean onUnpinch(int fingers, long gestureDuration) {
-                grtv.setText("unpinch " + fingers);
+                grtv.setText("You unpinched " + fingers + "fingers");
                 return false;
             }
         });
