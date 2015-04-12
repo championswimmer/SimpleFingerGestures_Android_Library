@@ -11,8 +11,22 @@ import android.view.View;
  */
 public class SimpleFingerGestures implements View.OnTouchListener {
 
-    public static boolean DEBUG = true;
-    public static boolean CONSUME_TOUCH_EVENTS = false;
+    private boolean debug = true;
+    private boolean consumeTouchEvents = false;
+
+
+    public void setDebug(boolean debug) {
+        this.debug = debug;
+    }
+
+    public boolean getConsumeTouchEvents() {
+        return consumeTouchEvents;
+    }
+
+    public void setConsumeTouchEvents(boolean consumeTouchEvents) {
+        this.consumeTouchEvents = consumeTouchEvents;
+    }
+
     // Will see if these need to be used. For now just returning duration in milliS
     public static final long GESTURE_SPEED_SLOW = 1500;
     public static final long GESTURE_SPEED_MEDIUM = 1000;
@@ -48,42 +62,42 @@ public class SimpleFingerGestures implements View.OnTouchListener {
 
     @Override
     public boolean onTouch(View view, MotionEvent ev) {
-        if (DEBUG) Log.d(TAG, "onTouch");
+        if (debug) Log.d(TAG, "onTouch");
         switch (ev.getAction() & MotionEvent.ACTION_MASK) {
             case MotionEvent.ACTION_DOWN:
-                if (DEBUG) Log.d(TAG, "ACTION_DOWN");
+                if (debug) Log.d(TAG, "ACTION_DOWN");
                 startTracking(0);
                 ga.trackGesture(ev);
-                return CONSUME_TOUCH_EVENTS;
+                return consumeTouchEvents;
             case MotionEvent.ACTION_UP:
-                if (DEBUG) Log.d(TAG, "ACTION_UP");
+                if (debug) Log.d(TAG, "ACTION_UP");
                 if (tracking[0]) {
                     doCallBack(ga.getGesture(ev));
                 }
                 stopTracking(0);
                 ga.untrackGesture();
-                return CONSUME_TOUCH_EVENTS;
+                return consumeTouchEvents;
             case MotionEvent.ACTION_POINTER_DOWN:
-                if (DEBUG) Log.d(TAG, "ACTION_POINTER_DOWN" + " " + "num" + ev.getPointerCount());
+                if (debug) Log.d(TAG, "ACTION_POINTER_DOWN" + " " + "num" + ev.getPointerCount());
                 startTracking(ev.getPointerCount() - 1);
                 ga.trackGesture(ev);
-                return CONSUME_TOUCH_EVENTS;
+                return consumeTouchEvents;
             case MotionEvent.ACTION_POINTER_UP:
-                if (DEBUG) Log.d(TAG, "ACTION_POINTER_UP" + " " + "num" + ev.getPointerCount());
+                if (debug) Log.d(TAG, "ACTION_POINTER_UP" + " " + "num" + ev.getPointerCount());
                 if (tracking[1]) {
                     doCallBack(ga.getGesture(ev));
                 }
                 stopTracking(ev.getPointerCount() - 1);
                 ga.untrackGesture();
-                return CONSUME_TOUCH_EVENTS;
+                return consumeTouchEvents;
             case MotionEvent.ACTION_CANCEL:
-                if (DEBUG) Log.d(TAG, "ACTION_CANCEL");
+                if (debug) Log.d(TAG, "ACTION_CANCEL");
                 return true;
             case MotionEvent.ACTION_MOVE:
-                if (DEBUG) Log.d(TAG, "ACTION_MOVE");
-                return CONSUME_TOUCH_EVENTS;
+                if (debug) Log.d(TAG, "ACTION_MOVE");
+                return consumeTouchEvents;
         }
-        return CONSUME_TOUCH_EVENTS;
+        return consumeTouchEvents;
     }
 
     private void doCallBack(GestureAnalyser.GestureType mGt) {
