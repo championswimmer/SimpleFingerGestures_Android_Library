@@ -3,6 +3,11 @@
 
 [![Build Status](https://travis-ci.org/championswimmer/SimpleFingerGestures_Android_Library.svg)](https://travis-ci.org/championswimmer/SimpleFingerGestures_Android_Library)
 
+##Example
+![](./screens/1.gif) ![](./screens/2.gif)   
+![](./screens/4.gif) ![](./screens/3.gif)
+
+
 ## Library
  The library is inside the <a href="./libSFG">libSFG</a> folder
 
