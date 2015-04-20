@@ -78,7 +78,18 @@
  visibility="public"
 >
 </field>
-<field name="PINCH"
+<field name="PINCHING"
+ type="int"
+ transient="false"
+ volatile="false"
+ value="205"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="PINCH_2"
  type="int"
  transient="false"
  volatile="false"
@@ -89,11 +100,22 @@
  visibility="public"
 >
 </field>
-<field name="PINCHING"
+<field name="PINCH_3"
  type="int"
  transient="false"
  volatile="false"
- value="205"
+ value="35"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="PINCH_4"
+ type="int"
+ transient="false"
+ volatile="false"
+ value="45"
  static="true"
  final="true"
  deprecated="not deprecated"
@@ -364,7 +386,18 @@
  visibility="public"
 >
 </field>
-<field name="UNPINCH"
+<field name="UNPINCHING"
+ type="int"
+ transient="false"
+ volatile="false"
+ value="206"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="UNPINCH_2"
  type="int"
  transient="false"
  volatile="false"
@@ -375,11 +408,22 @@
  visibility="public"
 >
 </field>
-<field name="UNPINCHING"
+<field name="UNPINCH_3"
  type="int"
  transient="false"
  volatile="false"
- value="206"
+ value="36"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="UNPINCH_4"
+ type="int"
+ transient="false"
+ volatile="false"
+ value="46"
  static="true"
  final="true"
  deprecated="not deprecated"
@@ -468,6 +512,17 @@
  visibility="public"
 >
 </constructor>
+<method name="getConsumeTouchEvents"
+ return="boolean"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
 <method name="onTouch"
  return="boolean"
  abstract="false"
@@ -483,6 +538,32 @@
 <parameter name="ev" type="MotionEvent">
 </parameter>
 </method>
+<method name="setConsumeTouchEvents"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="consumeTouchEvents" type="boolean">
+</parameter>
+</method>
+<method name="setDebug"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="debug" type="boolean">
+</parameter>
+</method>
 <method name="setOnFingerGestureListener"
  return="void"
  abstract="false"
@@ -496,26 +577,6 @@
 <parameter name="omfgl" type="in.championswimmer.sfg.lib.SimpleFingerGestures.OnFingerGestureListener">
 </parameter>
 </method>
-<field name="CONSUME_TOUCH_EVENTS"
- type="boolean"
- transient="false"
- volatile="false"
- static="true"
- final="false"
- deprecated="not deprecated"
- visibility="public"
->
-</field>
-<field name="DEBUG"
- type="boolean"
- transient="false"
- volatile="false"
- static="true"
- final="false"
- deprecated="not deprecated"
- visibility="public"
->
-</field>
 <field name="GESTURE_SPEED_FAST"
  type="long"
  transient="false"
