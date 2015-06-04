@@ -48,7 +48,6 @@ public class GestureAnalyser {
     public static final int PINCHING = 205;
     public static final int UNPINCHING = 206;
     private static final String TAG = "GestureAnalyser";
-    private int swipeSlopeIntolerance = 1;
     private double[] initialX = new double[5];
     private double[] initialY = new double[5];
     private double[] finalX = new double[5];
@@ -57,8 +56,17 @@ public class GestureAnalyser {
     private double[] currentY = new double[5];
     private double[] delX = new double[5];
     private double[] delY = new double[5];
+
     private int numFingers = 0;
     private long initialT, finalT, currentT;
+
+    private long prevInitialT, prevFinalT;
+
+    public static final int DOUBLE_TAP_1 = 107;
+    private int swipeSlopeIntolerance = 1;
+
+    private long doubleTapMaxDelayMillis = 800;
+    private long doubleTapMaxDownMillis = 200;
 
     public GestureAnalyser() {
         this(2);
@@ -80,19 +88,27 @@ public class GestureAnalyser {
 
     public void untrackGesture() {
         numFingers = 0;
+        prevFinalT = SystemClock.uptimeMillis();
+        prevInitialT = initialT;
     }
 
     public GestureType getGesture(MotionEvent ev) {
+        double averageDistance = 0.0;
         for (int i = 0; i < numFingers; i++) {
             finalX[i] = ev.getX(i);
             finalY[i] = ev.getY(i);
             delX[i] = finalX[i] - initialX[i];
             delY[i] = finalY[i] - initialY[i];
+
+            averageDistance += Math.sqrt(Math.pow(finalX[i] - initialX[i], 2) + Math.pow(finalY[i] - initialY[i], 2));
         }
+        averageDistance /= numFingers;
+
         finalT = SystemClock.uptimeMillis();
         GestureType gt = new GestureType();
         gt.setGestureFlag(calcGesture());
         gt.setGestureDuration(finalT - initialT);
+        gt.setGestureDistance(averageDistance);
         return gt;
     }
 
@@ -108,6 +124,10 @@ public class GestureAnalyser {
     }
 
     private int calcGesture() {
+        if (isDoubleTap()) {
+            return DOUBLE_TAP_1;
+        }
+
         if (numFingers == 1) {
             if ((-(delY[0])) > (swipeSlopeIntolerance * (Math.abs(delX[0])))) {
                 return SWIPE_1_UP;
@@ -232,10 +252,19 @@ public class GestureAnalyser {
                 + Math.pow((finalY[fingNum1] - finalY[fingNum2]), 2));
     }
 
+    public boolean isDoubleTap() {
+        if (initialT - prevFinalT < doubleTapMaxDelayMillis && finalT - initialT < doubleTapMaxDownMillis && prevFinalT - prevInitialT < doubleTapMaxDownMillis) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
     public class GestureType {
         private int gestureFlag;
         private long gestureDuration;
 
+        private double gestureDistance;
 
         public long getGestureDuration() {
             return gestureDuration;
@@ -255,6 +284,13 @@ public class GestureAnalyser {
         }
 
 
+        public double getGestureDistance() {
+            return gestureDistance;
+        }
+
+        public void setGestureDistance(double gestureDistance) {
+            this.gestureDistance = gestureDistance;
+        }
     }
 
 
