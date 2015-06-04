@@ -48,6 +48,7 @@ public class GestureAnalyser {
     public static final int PINCHING = 205;
     public static final int UNPINCHING = 206;
     private static final String TAG = "GestureAnalyser";
+    private int swipeSlopeIntolerance = 1;
     private double[] initialX = new double[5];
     private double[] initialY = new double[5];
     private double[] finalX = new double[5];
@@ -60,6 +61,11 @@ public class GestureAnalyser {
     private long initialT, finalT, currentT;
 
     public GestureAnalyser() {
+        this(2);
+    }
+
+    public GestureAnalyser(int swipeSlopeIntolerance) {
+        this.swipeSlopeIntolerance = swipeSlopeIntolerance;
     }
 
     public void trackGesture(MotionEvent ev) {
@@ -103,33 +109,33 @@ public class GestureAnalyser {
 
     private int calcGesture() {
         if (numFingers == 1) {
-            if ((-(delY[0])) > (2 * (Math.abs(delX[0])))) {
+            if ((-(delY[0])) > (swipeSlopeIntolerance * (Math.abs(delX[0])))) {
                 return SWIPE_1_UP;
             }
 
-            if (((delY[0])) > (2 * (Math.abs(delX[0])))) {
+            if (((delY[0])) > (swipeSlopeIntolerance * (Math.abs(delX[0])))) {
                 return SWIPE_1_DOWN;
             }
 
-            if ((-(delX[0])) > (2 * (Math.abs(delY[0])))) {
+            if ((-(delX[0])) > (swipeSlopeIntolerance * (Math.abs(delY[0])))) {
                 return SWIPE_1_LEFT;
             }
 
-            if (((delX[0])) > (2 * (Math.abs(delY[0])))) {
+            if (((delX[0])) > (swipeSlopeIntolerance * (Math.abs(delY[0])))) {
                 return SWIPE_1_RIGHT;
             }
         }
         if (numFingers == 2) {
-            if (((-delY[0]) > (2 * Math.abs(delX[0]))) && ((-delY[1]) > (2 * Math.abs(delX[1])))) {
+            if (((-delY[0]) > (swipeSlopeIntolerance * Math.abs(delX[0]))) && ((-delY[1]) > (swipeSlopeIntolerance * Math.abs(delX[1])))) {
                 return SWIPE_2_UP;
             }
-            if (((delY[0]) > (2 * Math.abs(delX[0]))) && ((delY[1]) > (2 * Math.abs(delX[1])))) {
+            if (((delY[0]) > (swipeSlopeIntolerance * Math.abs(delX[0]))) && ((delY[1]) > (swipeSlopeIntolerance * Math.abs(delX[1])))) {
                 return SWIPE_2_DOWN;
             }
-            if (((-delX[0]) > (2 * Math.abs(delY[0]))) && ((-delX[1]) > (2 * Math.abs(delY[1])))) {
+            if (((-delX[0]) > (swipeSlopeIntolerance * Math.abs(delY[0]))) && ((-delX[1]) > (swipeSlopeIntolerance * Math.abs(delY[1])))) {
                 return SWIPE_2_LEFT;
             }
-            if (((delX[0]) > (2 * Math.abs(delY[0]))) && ((delX[1]) > (2 * Math.abs(delY[1])))) {
+            if (((delX[0]) > (swipeSlopeIntolerance * Math.abs(delY[0]))) && ((delX[1]) > (swipeSlopeIntolerance * Math.abs(delY[1])))) {
                 return SWIPE_2_RIGHT;
             }
             if (finalFingDist(0, 1) > 2 * (initialFingDist(0, 1))) {
@@ -140,24 +146,24 @@ public class GestureAnalyser {
             }
         }
         if (numFingers == 3) {
-            if (((-delY[0]) > (2 * Math.abs(delX[0])))
-                    && ((-delY[1]) > (2 * Math.abs(delX[1])))
-                    && ((-delY[2]) > (2 * Math.abs(delX[2])))) {
+            if (((-delY[0]) > (swipeSlopeIntolerance * Math.abs(delX[0])))
+                    && ((-delY[1]) > (swipeSlopeIntolerance * Math.abs(delX[1])))
+                    && ((-delY[2]) > (swipeSlopeIntolerance * Math.abs(delX[2])))) {
                 return SWIPE_3_UP;
             }
-            if (((delY[0]) > (2 * Math.abs(delX[0])))
-                    && ((delY[1]) > (2 * Math.abs(delX[1])))
-                    && ((delY[2]) > (2 * Math.abs(delX[2])))) {
+            if (((delY[0]) > (swipeSlopeIntolerance * Math.abs(delX[0])))
+                    && ((delY[1]) > (swipeSlopeIntolerance * Math.abs(delX[1])))
+                    && ((delY[2]) > (swipeSlopeIntolerance * Math.abs(delX[2])))) {
                 return SWIPE_3_DOWN;
             }
-            if (((-delX[0]) > (2 * Math.abs(delY[0])))
-                    && ((-delX[1]) > (2 * Math.abs(delY[1])))
-                    && ((-delX[2]) > (2 * Math.abs(delY[2])))) {
+            if (((-delX[0]) > (swipeSlopeIntolerance * Math.abs(delY[0])))
+                    && ((-delX[1]) > (swipeSlopeIntolerance * Math.abs(delY[1])))
+                    && ((-delX[2]) > (swipeSlopeIntolerance * Math.abs(delY[2])))) {
                 return SWIPE_3_LEFT;
             }
-            if (((delX[0]) > (2 * Math.abs(delY[0])))
-                    && ((delX[1]) > (2 * Math.abs(delY[1])))
-                    && ((delX[2]) > (2 * Math.abs(delY[2])))) {
+            if (((delX[0]) > (swipeSlopeIntolerance * Math.abs(delY[0])))
+                    && ((delX[1]) > (swipeSlopeIntolerance * Math.abs(delY[1])))
+                    && ((delX[2]) > (swipeSlopeIntolerance * Math.abs(delY[2])))) {
                 return SWIPE_3_RIGHT;
             }
 
@@ -174,28 +180,28 @@ public class GestureAnalyser {
 
         }
         if (numFingers == 4) {
-            if (((-delY[0]) > (2 * Math.abs(delX[0])))
-                    && ((-delY[1]) > (2 * Math.abs(delX[1])))
-                    && ((-delY[2]) > (2 * Math.abs(delX[2])))
-                    && ((-delY[3]) > (2 * Math.abs(delX[3])))) {
+            if (((-delY[0]) > (swipeSlopeIntolerance * Math.abs(delX[0])))
+                    && ((-delY[1]) > (swipeSlopeIntolerance * Math.abs(delX[1])))
+                    && ((-delY[2]) > (swipeSlopeIntolerance * Math.abs(delX[2])))
+                    && ((-delY[3]) > (swipeSlopeIntolerance * Math.abs(delX[3])))) {
                 return SWIPE_4_UP;
             }
-            if (((delY[0]) > (2 * Math.abs(delX[0])))
-                    && ((delY[1]) > (2 * Math.abs(delX[1])))
-                    && ((delY[2]) > (2 * Math.abs(delX[2])))
-                    && ((delY[3]) > (2 * Math.abs(delX[3])))) {
+            if (((delY[0]) > (swipeSlopeIntolerance * Math.abs(delX[0])))
+                    && ((delY[1]) > (swipeSlopeIntolerance * Math.abs(delX[1])))
+                    && ((delY[2]) > (swipeSlopeIntolerance * Math.abs(delX[2])))
+                    && ((delY[3]) > (swipeSlopeIntolerance * Math.abs(delX[3])))) {
                 return SWIPE_4_DOWN;
             }
-            if (((-delX[0]) > (2 * Math.abs(delY[0])))
-                    && ((-delX[1]) > (2 * Math.abs(delY[1])))
-                    && ((-delX[2]) > (2 * Math.abs(delY[2])))
-                    && ((-delX[3]) > (2 * Math.abs(delY[3])))) {
+            if (((-delX[0]) > (swipeSlopeIntolerance * Math.abs(delY[0])))
+                    && ((-delX[1]) > (swipeSlopeIntolerance * Math.abs(delY[1])))
+                    && ((-delX[2]) > (swipeSlopeIntolerance * Math.abs(delY[2])))
+                    && ((-delX[3]) > (swipeSlopeIntolerance * Math.abs(delY[3])))) {
                 return SWIPE_4_LEFT;
             }
-            if (((delX[0]) > (2 * Math.abs(delY[0])))
-                    && ((delX[1]) > (2 * Math.abs(delY[1])))
-                    && ((delX[2]) > (2 * Math.abs(delY[2])))
-                    && ((delX[3]) > (2 * Math.abs(delY[3])))) {
+            if (((delX[0]) > (swipeSlopeIntolerance * Math.abs(delY[0])))
+                    && ((delX[1]) > (swipeSlopeIntolerance * Math.abs(delY[1])))
+                    && ((delX[2]) > (swipeSlopeIntolerance * Math.abs(delY[2])))
+                    && ((delX[3]) > (swipeSlopeIntolerance * Math.abs(delY[3])))) {
                 return SWIPE_4_RIGHT;
             }
             if ((finalFingDist(0,1) > 1.5*(initialFingDist(0,1)))

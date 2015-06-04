@@ -44,6 +44,8 @@ public class SimpleFingerGestures implements View.OnTouchListener {
         ga = new GestureAnalyser();
     }
 
+    public SimpleFingerGestures(int swipeSlopeIntolerance) { ga = new GestureAnalyser(swipeSlopeIntolerance);}
+
 
     /**
      * Register a callback to be invoked when multi-finger gestures take place

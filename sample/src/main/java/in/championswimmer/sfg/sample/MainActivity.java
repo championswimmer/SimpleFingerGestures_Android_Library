@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import in.championswimmer.sfg.lib.SimpleFingerGestures;
 
@@ -28,37 +29,37 @@ public class MainActivity extends Activity {
         sfg.setOnFingerGestureListener(new SimpleFingerGestures.OnFingerGestureListener() {
             @Override
             public boolean onSwipeUp(int fingers, long gestureDuration) {
-                grtv.setText("You swiped " + fingers + " fingers  up");
+                Toast.makeText(MainActivity.this, "You swiped " + fingers + " fingers  up", Toast.LENGTH_SHORT).show();
                 return false;
             }
 
             @Override
             public boolean onSwipeDown(int fingers, long gestureDuration) {
-                grtv.setText("You swiped " + fingers + " fingers  down");
+                Toast.makeText(MainActivity.this, "You swiped " + fingers + " fingers  down", Toast.LENGTH_SHORT).show();
                 return false;
             }
 
             @Override
             public boolean onSwipeLeft(int fingers, long gestureDuration) {
-                grtv.setText("You swiped " + fingers + " fingers  left");
+                Toast.makeText(MainActivity.this, "You swiped " + fingers + " fingers  left", Toast.LENGTH_SHORT).show();
                 return false;
             }
 
             @Override
             public boolean onSwipeRight(int fingers, long gestureDuration) {
-                grtv.setText("You swiped " + fingers + " fingers  right");
+                Toast.makeText(MainActivity.this, "You swiped " + fingers + " fingers  right", Toast.LENGTH_SHORT).show();
                 return false;
             }
 
             @Override
             public boolean onPinch(int fingers, long gestureDuration) {
-                grtv.setText("You pinched " + fingers + " fingers");
+                Toast.makeText(MainActivity.this, "You pinched " + fingers + " fingers", Toast.LENGTH_SHORT).show();
                 return false;
             }
 
             @Override
             public boolean onUnpinch(int fingers, long gestureDuration) {
-                grtv.setText("You unpinched " + fingers + "fingers");
+                Toast.makeText(MainActivity.this, "You unpinched " + fingers + "fingers", Toast.LENGTH_SHORT).show();
                 return false;
             }
         });
