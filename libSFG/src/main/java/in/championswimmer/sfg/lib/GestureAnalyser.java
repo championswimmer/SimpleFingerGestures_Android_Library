@@ -65,15 +65,17 @@ public class GestureAnalyser {
     public static final int DOUBLE_TAP_1 = 107;
     private int swipeSlopeIntolerance = 1;
 
-    private long doubleTapMaxDelayMillis = 800;
-    private long doubleTapMaxDownMillis = 200;
+    private long doubleTapMaxDelayMillis;
+    private long doubleTapMaxDownMillis;
 
     public GestureAnalyser() {
-        this(2);
+        this(2, 500, 100);
     }
 
-    public GestureAnalyser(int swipeSlopeIntolerance) {
+    public GestureAnalyser(int swipeSlopeIntolerance, int doubleTapMaxDelayMillis, int doubleTapMaxDownMillis) {
         this.swipeSlopeIntolerance = swipeSlopeIntolerance;
+        this.doubleTapMaxDownMillis = doubleTapMaxDownMillis;
+        this.doubleTapMaxDelayMillis = doubleTapMaxDelayMillis;
     }
 
     public void trackGesture(MotionEvent ev) {
