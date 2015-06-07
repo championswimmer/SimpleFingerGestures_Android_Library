@@ -36,6 +36,9 @@ public class GestureAnalyser {
     public static final int UNPINCH_3 = 36;
     public static final int PINCH_4 = 45;
     public static final int UNPINCH_4 = 46;
+
+    public static final int DOUBLE_TAP_1 = 107;
+
     //Ongoing gesture flags
     public static final int SWIPING_1_UP = 101;
     public static final int SWIPING_1_DOWN = 102;
@@ -62,14 +65,13 @@ public class GestureAnalyser {
 
     private long prevInitialT, prevFinalT;
 
-    public static final int DOUBLE_TAP_1 = 107;
-    private int swipeSlopeIntolerance = 1;
+    private int swipeSlopeIntolerance = 3;
 
     private long doubleTapMaxDelayMillis;
     private long doubleTapMaxDownMillis;
 
     public GestureAnalyser() {
-        this(2, 500, 100);
+        this(3, 500, 100);
     }
 
     public GestureAnalyser(int swipeSlopeIntolerance, int doubleTapMaxDelayMillis, int doubleTapMaxDownMillis) {
