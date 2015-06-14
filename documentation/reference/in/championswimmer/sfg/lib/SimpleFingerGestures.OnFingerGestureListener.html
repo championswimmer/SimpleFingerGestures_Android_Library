@@ -336,7 +336,23 @@
             boolean
         </td>
         <td class="jd-linkcol" width="100%">
-        <span class="sympad"><a href="../../../../in/championswimmer/sfg/lib/SimpleFingerGestures.OnFingerGestureListener.html#onPinch(int, long)">onPinch</a></span>(int fingers, long gestureDuration)
+        <span class="sympad"><a href="../../../../in/championswimmer/sfg/lib/SimpleFingerGestures.OnFingerGestureListener.html#onDoubleTap(int)">onDoubleTap</a></span>(int fingers)
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol">
+            abstract
+            
+            
+            
+            
+            boolean
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../../in/championswimmer/sfg/lib/SimpleFingerGestures.OnFingerGestureListener.html#onPinch(int, long, double)">onPinch</a></span>(int fingers, long gestureDuration, double gestureDistance)
         
         <div class="jd-descrdiv">Called when user <b>pinches</b> with two fingers (bring together)</div>
   
@@ -344,7 +360,7 @@
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol">
             abstract
             
@@ -354,7 +370,7 @@
             boolean
         </td>
         <td class="jd-linkcol" width="100%">
-        <span class="sympad"><a href="../../../../in/championswimmer/sfg/lib/SimpleFingerGestures.OnFingerGestureListener.html#onSwipeDown(int, long)">onSwipeDown</a></span>(int fingers, long gestureDuration)
+        <span class="sympad"><a href="../../../../in/championswimmer/sfg/lib/SimpleFingerGestures.OnFingerGestureListener.html#onSwipeDown(int, long, double)">onSwipeDown</a></span>(int fingers, long gestureDuration, double gestureDistance)
         
         <div class="jd-descrdiv">Called when user swipes <b>down</b> with two fingers</div>
   
@@ -362,7 +378,7 @@
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol">
             abstract
             
@@ -372,7 +388,7 @@
             boolean
         </td>
         <td class="jd-linkcol" width="100%">
-        <span class="sympad"><a href="../../../../in/championswimmer/sfg/lib/SimpleFingerGestures.OnFingerGestureListener.html#onSwipeLeft(int, long)">onSwipeLeft</a></span>(int fingers, long gestureDuration)
+        <span class="sympad"><a href="../../../../in/championswimmer/sfg/lib/SimpleFingerGestures.OnFingerGestureListener.html#onSwipeLeft(int, long, double)">onSwipeLeft</a></span>(int fingers, long gestureDuration, double gestureDistance)
         
         <div class="jd-descrdiv">Called when user swipes <b>left</b> with two fingers</div>
   
@@ -380,6 +396,24 @@
 
 
 	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol">
+            abstract
+            
+            
+            
+            
+            boolean
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../../in/championswimmer/sfg/lib/SimpleFingerGestures.OnFingerGestureListener.html#onSwipeRight(int, long, double)">onSwipeRight</a></span>(int fingers, long gestureDuration, double gestureDistance)
+        
+        <div class="jd-descrdiv">Called when user swipes <b>right</b> with two fingers</div>
+  
+  </td></tr>
+
+
+	 
     <tr class=" api apilevel-" >
         <td class="jd-typecol">
             abstract
@@ -390,9 +424,9 @@
             boolean
         </td>
         <td class="jd-linkcol" width="100%">
-        <span class="sympad"><a href="../../../../in/championswimmer/sfg/lib/SimpleFingerGestures.OnFingerGestureListener.html#onSwipeRight(int, long)">onSwipeRight</a></span>(int fingers, long gestureDuration)
+        <span class="sympad"><a href="../../../../in/championswimmer/sfg/lib/SimpleFingerGestures.OnFingerGestureListener.html#onSwipeUp(int, long, double)">onSwipeUp</a></span>(int fingers, long gestureDuration, double gestureDistance)
         
-        <div class="jd-descrdiv">Called when user swipes <b>right</b> with two fingers</div>
+        <div class="jd-descrdiv">Called when user swipes <b>up</b> with two fingers</div>
   
   </td></tr>
 
@@ -408,25 +442,7 @@
             boolean
         </td>
         <td class="jd-linkcol" width="100%">
-        <span class="sympad"><a href="../../../../in/championswimmer/sfg/lib/SimpleFingerGestures.OnFingerGestureListener.html#onSwipeUp(int, long)">onSwipeUp</a></span>(int fingers, long gestureDuration)
-        
-        <div class="jd-descrdiv">Called when user swipes <b>up</b> with two fingers</div>
-  
-  </td></tr>
-
-
-	 
-    <tr class=" api apilevel-" >
-        <td class="jd-typecol">
-            abstract
-            
-            
-            
-            
-            boolean
-        </td>
-        <td class="jd-linkcol" width="100%">
-        <span class="sympad"><a href="../../../../in/championswimmer/sfg/lib/SimpleFingerGestures.OnFingerGestureListener.html#onUnpinch(int, long)">onUnpinch</a></span>(int fingers, long gestureDuration)
+        <span class="sympad"><a href="../../../../in/championswimmer/sfg/lib/SimpleFingerGestures.OnFingerGestureListener.html#onUnpinch(int, long, double)">onUnpinch</a></span>(int fingers, long gestureDuration, double gestureDistance)
         
         <div class="jd-descrdiv">Called when user <b>un-pinches</b> with two fingers (take apart)</div>
   
@@ -481,7 +497,38 @@
 
 
 
-<a id="onPinch(int, long)"></a>
+<a id="onDoubleTap(int)"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+        abstract 
+         
+        boolean
+      </span>
+      <span class="sympad">onDoubleTap</span>
+      <span class="normal">(int fingers)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    </div>
+</div>
+
+
+<a id="onPinch(int, long, double)"></a>
 
 <div class="jd-details api apilevel-"> 
     <h4 class="jd-details-title">
@@ -494,7 +541,7 @@
         boolean
       </span>
       <span class="sympad">onPinch</span>
-      <span class="normal">(int fingers, long gestureDuration)</span>
+      <span class="normal">(int fingers, long gestureDuration, double gestureDistance)</span>
     </h4>
       <div class="api-level">
         <div>
@@ -525,7 +572,7 @@
 </div>
 
 
-<a id="onSwipeDown(int, long)"></a>
+<a id="onSwipeDown(int, long, double)"></a>
 
 <div class="jd-details api apilevel-"> 
     <h4 class="jd-details-title">
@@ -538,7 +585,7 @@
         boolean
       </span>
       <span class="sympad">onSwipeDown</span>
-      <span class="normal">(int fingers, long gestureDuration)</span>
+      <span class="normal">(int fingers, long gestureDuration, double gestureDistance)</span>
     </h4>
       <div class="api-level">
         <div>
@@ -569,7 +616,7 @@
 </div>
 
 
-<a id="onSwipeLeft(int, long)"></a>
+<a id="onSwipeLeft(int, long, double)"></a>
 
 <div class="jd-details api apilevel-"> 
     <h4 class="jd-details-title">
@@ -582,7 +629,7 @@
         boolean
       </span>
       <span class="sympad">onSwipeLeft</span>
-      <span class="normal">(int fingers, long gestureDuration)</span>
+      <span class="normal">(int fingers, long gestureDuration, double gestureDistance)</span>
     </h4>
       <div class="api-level">
         <div>
@@ -613,7 +660,7 @@
 </div>
 
 
-<a id="onSwipeRight(int, long)"></a>
+<a id="onSwipeRight(int, long, double)"></a>
 
 <div class="jd-details api apilevel-"> 
     <h4 class="jd-details-title">
@@ -626,7 +673,7 @@
         boolean
       </span>
       <span class="sympad">onSwipeRight</span>
-      <span class="normal">(int fingers, long gestureDuration)</span>
+      <span class="normal">(int fingers, long gestureDuration, double gestureDistance)</span>
     </h4>
       <div class="api-level">
         <div>
@@ -657,7 +704,7 @@
 </div>
 
 
-<a id="onSwipeUp(int, long)"></a>
+<a id="onSwipeUp(int, long, double)"></a>
 
 <div class="jd-details api apilevel-"> 
     <h4 class="jd-details-title">
@@ -670,7 +717,7 @@
         boolean
       </span>
       <span class="sympad">onSwipeUp</span>
-      <span class="normal">(int fingers, long gestureDuration)</span>
+      <span class="normal">(int fingers, long gestureDuration, double gestureDistance)</span>
     </h4>
       <div class="api-level">
         <div>
@@ -701,7 +748,7 @@
 </div>
 
 
-<a id="onUnpinch(int, long)"></a>
+<a id="onUnpinch(int, long, double)"></a>
 
 <div class="jd-details api apilevel-"> 
     <h4 class="jd-details-title">
@@ -714,7 +761,7 @@
         boolean
       </span>
       <span class="sympad">onUnpinch</span>
-      <span class="normal">(int fingers, long gestureDuration)</span>
+      <span class="normal">(int fingers, long gestureDuration, double gestureDistance)</span>
     </h4>
       <div class="api-level">
         <div>
