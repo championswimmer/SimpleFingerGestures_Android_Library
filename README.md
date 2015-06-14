@@ -2,6 +2,7 @@
  An android library to implement simple 1 or 2 finger gestures easily
 
 [![Build Status](https://travis-ci.org/championswimmer/SimpleFingerGestures_Android_Library.svg)](https://travis-ci.org/championswimmer/SimpleFingerGestures_Android_Library)
+[![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-SimpleFingerGestures-brightgreen.svg?style=flat)](http://android-arsenal.com/details/1/777)
 
 ##Example
 ![](./screens/1.gif) ![](./screens/2.gif)   
