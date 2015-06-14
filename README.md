@@ -76,6 +76,26 @@ The easiest way to add to your project is the download the latest zip from the R
 Inside you'll find a compiled library in .jar format that you can just drop in to the
 libs folder of your Android app project for it to get automatically added as a library
 
+Also you can add it using jitpack maven distribution.  
+Add the jitpack maven repository
+
+```groovy
+    repositories {
+        jcenter()
+        maven {
+            url "https://jitpack.io"
+        }
+    }
+```
+
+Add the dependency
+
+```groovy
+    dependencies {
+            compile 'com.github.championswimmer:SimpleFingerGestures_Android_Library:1.1'
+    }
+```
+
 ### Documentation
 
 Find documentation at  
