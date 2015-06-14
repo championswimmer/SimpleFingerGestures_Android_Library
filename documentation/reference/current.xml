@@ -17,6 +17,20 @@
  visibility="public"
 >
 </constructor>
+<constructor name="GestureAnalyser"
+ type="in.championswimmer.sfg.lib.GestureAnalyser"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="swipeSlopeIntolerance" type="int">
+</parameter>
+<parameter name="doubleTapMaxDelayMillis" type="int">
+</parameter>
+<parameter name="doubleTapMaxDownMillis" type="int">
+</parameter>
+</constructor>
 <method name="getGesture"
  return="in.championswimmer.sfg.lib.GestureAnalyser.GestureType"
  abstract="false"
@@ -42,6 +56,17 @@
 >
 <parameter name="ev" type="MotionEvent">
 </parameter>
+</method>
+<method name="isDoubleTap"
+ return="boolean"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
 </method>
 <method name="trackGesture"
  return="void"
@@ -72,6 +97,17 @@
  transient="false"
  volatile="false"
  value="true"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="DOUBLE_TAP_1"
+ type="int"
+ transient="false"
+ volatile="false"
+ value="107"
  static="true"
  final="true"
  deprecated="not deprecated"
@@ -447,6 +483,17 @@
  visibility="public"
 >
 </constructor>
+<method name="getGestureDistance"
+ return="double"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
 <method name="getGestureDuration"
  return="long"
  abstract="false"
@@ -468,6 +515,19 @@
  deprecated="not deprecated"
  visibility="public"
 >
+</method>
+<method name="setGestureDistance"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="gestureDistance" type="double">
+</parameter>
 </method>
 <method name="setGestureDuration"
  return="void"
@@ -511,6 +571,20 @@
  deprecated="not deprecated"
  visibility="public"
 >
+</constructor>
+<constructor name="SimpleFingerGestures"
+ type="in.championswimmer.sfg.lib.SimpleFingerGestures"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="swipeSlopeIntolerance" type="int">
+</parameter>
+<parameter name="doubleTapMaxDelayMillis" type="int">
+</parameter>
+<parameter name="doubleTapMaxDownMillis" type="int">
+</parameter>
 </constructor>
 <method name="getConsumeTouchEvents"
  return="boolean"
@@ -629,6 +703,19 @@
  deprecated="not deprecated"
  visibility="public"
 >
+<method name="onDoubleTap"
+ return="boolean"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="fingers" type="int">
+</parameter>
+</method>
 <method name="onPinch"
  return="boolean"
  abstract="true"
@@ -642,6 +729,8 @@
 <parameter name="fingers" type="int">
 </parameter>
 <parameter name="gestureDuration" type="long">
+</parameter>
+<parameter name="gestureDistance" type="double">
 </parameter>
 </method>
 <method name="onSwipeDown"
@@ -658,6 +747,8 @@
 </parameter>
 <parameter name="gestureDuration" type="long">
 </parameter>
+<parameter name="gestureDistance" type="double">
+</parameter>
 </method>
 <method name="onSwipeLeft"
  return="boolean"
@@ -672,6 +763,8 @@
 <parameter name="fingers" type="int">
 </parameter>
 <parameter name="gestureDuration" type="long">
+</parameter>
+<parameter name="gestureDistance" type="double">
 </parameter>
 </method>
 <method name="onSwipeRight"
@@ -688,6 +781,8 @@
 </parameter>
 <parameter name="gestureDuration" type="long">
 </parameter>
+<parameter name="gestureDistance" type="double">
+</parameter>
 </method>
 <method name="onSwipeUp"
  return="boolean"
@@ -703,6 +798,8 @@
 </parameter>
 <parameter name="gestureDuration" type="long">
 </parameter>
+<parameter name="gestureDistance" type="double">
+</parameter>
 </method>
 <method name="onUnpinch"
  return="boolean"
@@ -717,6 +814,8 @@
 <parameter name="fingers" type="int">
 </parameter>
 <parameter name="gestureDuration" type="long">
+</parameter>
+<parameter name="gestureDistance" type="double">
 </parameter>
 </method>
 </interface>
