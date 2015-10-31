@@ -3,11 +3,12 @@
 
 [![Build Status](https://travis-ci.org/championswimmer/SimpleFingerGestures_Android_Library.svg)](https://travis-ci.org/championswimmer/SimpleFingerGestures_Android_Library)
 [![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-SimpleFingerGestures-brightgreen.svg?style=flat)](http://android-arsenal.com/details/1/777)
-[![Release](https://img.shields.io/github/release/championswimmer/SimpleFingerGestures_Android_Library.svg?label=JitPack)](https://jitpack.io/#championswimmer/SimpleFingerGestures_Android_Library/1.1)
+[![Release](https://img.shields.io/github/release/championswimmer/SimpleFingerGestures_Android_Library.svg?label=maven)](https://jitpack.io/#championswimmer/SimpleFingerGestures_Android_Library/1.2)
 
 ##Example
 ![](./screens/1.gif) ![](./screens/2.gif)   
-![](./screens/4.gif) ![](./screens/3.gif)
+![](./screens/4.gif) ![](./screens/3.gif)  
+
 
 
 ## Library
@@ -94,7 +95,7 @@ Add the dependency
 
 ```groovy
     dependencies {
-            compile 'com.github.championswimmer:SimpleFingerGestures_Android_Library:1.1'
+            compile 'com.github.championswimmer:SimpleFingerGestures_Android_Library:1.2'
     }
 ```
 
