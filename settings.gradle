@@ -1,1 +1,1 @@
-include ':libSFG', 'sample'
+include ':libSFG', ':sample'
