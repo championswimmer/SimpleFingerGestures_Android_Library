@@ -23,47 +23,51 @@
 
  1. Create an object of class SimpleFingerGestures
 
-        private SimpleFingerGestures mySfg = new SimpleFingerGestures();
+```java
+private SimpleFingerGestures mySfg = new SimpleFingerGestures();
+```
 
  2. Implement the required gestures via this object
 
-        mySfg.setOnFingerGestureListener(new SimpleFingerGestures.OnFingerGestureListener() {
-                    @Override
-                    public boolean onSwipeUp(int fingers, long gestureDuration) {
-                        grtv.setText("swiped " + fingers + " up");
-                        return false;
-                    }
-        
-                    @Override
-                    public boolean onSwipeDown(int fingers, long gestureDuration) {
-                        grtv.setText("swiped " + fingers + " down");
-                        return false;
-                    }
-        
-                    @Override
-                    public boolean onSwipeLeft(int fingers, long gestureDuration) {
-                        grtv.setText("swiped " + fingers + " left");
-                        return false;
-                    }
-        
-                    @Override
-                    public boolean onSwipeRight(int fingers, long gestureDuration) {
-                        grtv.setText("swiped " + fingers + " right");
-                        return false;
-                    }
-        
-                    @Override
-                    public boolean onPinch(int fingers, long gestureDuration) {
-                        grtv.setText("pinch");
-                        return false;
-                    }
-        
-                    @Override
-                    public boolean onUnpinch(int fingers, long gestureDuration) {
-                        grtv.setText("unpinch");
-                        return false;
-                    }
-                });
+```java
+mySfg.setOnFingerGestureListener(new SimpleFingerGestures.OnFingerGestureListener() {
+            @Override
+            public boolean onSwipeUp(int fingers, long gestureDuration) {
+                grtv.setText("swiped " + fingers + " up");
+                return false;
+            }
+
+            @Override
+            public boolean onSwipeDown(int fingers, long gestureDuration) {
+                grtv.setText("swiped " + fingers + " down");
+                return false;
+            }
+
+            @Override
+            public boolean onSwipeLeft(int fingers, long gestureDuration) {
+                grtv.setText("swiped " + fingers + " left");
+                return false;
+            }
+
+            @Override
+            public boolean onSwipeRight(int fingers, long gestureDuration) {
+                grtv.setText("swiped " + fingers + " right");
+                return false;
+            }
+
+            @Override
+            public boolean onPinch(int fingers, long gestureDuration) {
+                grtv.setText("pinch");
+                return false;
+            }
+
+            @Override
+            public boolean onUnpinch(int fingers, long gestureDuration) {
+                grtv.setText("unpinch");
+                return false;
+            }
+        });
+```
 
  3. And finally set this object onto your view's OnTouchListener
 
