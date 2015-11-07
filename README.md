@@ -1,9 +1,10 @@
 # SimpleFingerGestures 
  An android library to implement simple 1 or 2 finger gestures easily
+[![Book session on Codementor](https://cdn.codementor.io/badges/book_session_github.svg)](https://www.codementor.io/championswimmer?utm_source=github&utm_medium=button&utm_term=championswimmer&utm_campaign=github)
 
 [![Build Status](https://travis-ci.org/championswimmer/SimpleFingerGestures_Android_Library.svg)](https://travis-ci.org/championswimmer/SimpleFingerGestures_Android_Library)
 [![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-SimpleFingerGestures-brightgreen.svg?style=flat)](http://android-arsenal.com/details/1/777)
-[![Release](https://img.shields.io/github/release/championswimmer/SimpleFingerGestures_Android_Library.svg?label=maven)](https://jitpack.io/#championswimmer/SimpleFingerGestures_Android_Library/1.2)
+[![Release](https://img.shields.io/github/release/championswimmer/SimpleFingerGestures_Android_Library.svg?label=JitPack)](https://jitpack.io/#championswimmer/SimpleFingerGestures_Android_Library/1.2)
 
 ##Example
 ![](./screens/1.gif) ![](./screens/2.gif)   
