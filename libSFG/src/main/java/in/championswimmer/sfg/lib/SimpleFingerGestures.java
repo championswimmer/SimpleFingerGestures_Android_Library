@@ -14,19 +14,6 @@ public class SimpleFingerGestures implements View.OnTouchListener {
     private boolean debug = true;
     private boolean consumeTouchEvents = false;
 
-
-    public void setDebug(boolean debug) {
-        this.debug = debug;
-    }
-
-    public boolean getConsumeTouchEvents() {
-        return consumeTouchEvents;
-    }
-
-    public void setConsumeTouchEvents(boolean consumeTouchEvents) {
-        this.consumeTouchEvents = consumeTouchEvents;
-    }
-
     // Will see if these need to be used. For now just returning duration in milliS
     public static final long GESTURE_SPEED_SLOW = 1500;
     public static final long GESTURE_SPEED_MEDIUM = 1000;
@@ -47,7 +34,18 @@ public class SimpleFingerGestures implements View.OnTouchListener {
     public SimpleFingerGestures(int swipeSlopeIntolerance, int doubleTapMaxDelayMillis, int doubleTapMaxDownMillis) {
         ga = new GestureAnalyser(swipeSlopeIntolerance, doubleTapMaxDelayMillis, doubleTapMaxDownMillis);
     }
+    
+    public void setDebug(boolean debug) {
+        this.debug = debug;
+    }
 
+    public boolean getConsumeTouchEvents() {
+        return consumeTouchEvents;
+    }
+
+    public void setConsumeTouchEvents(boolean consumeTouchEvents) {
+        this.consumeTouchEvents = consumeTouchEvents;
+    }
 
     /**
      * Register a callback to be invoked when multi-finger gestures take place
