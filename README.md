@@ -6,7 +6,7 @@
 [![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-SimpleFingerGestures-brightgreen.svg?style=flat)](http://android-arsenal.com/details/1/777)
 [![Release](https://jitpack.io/v/in.championswimmer/SimpleFingerGestures_Android_Library.svg)](https://jitpack.io/#in.championswimmer/SimpleFingerGestures_Android_Library)
 
-##Example
+## Example
 ![](./screens/1.gif) ![](./screens/2.gif)   
 ![](./screens/4.gif) ![](./screens/3.gif)  
 
